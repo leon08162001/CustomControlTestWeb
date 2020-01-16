@@ -1,0 +1,189 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default3.aspx.cs" Inherits="_Default3" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+  <title>主頁</title>
+  <link href="../css/css.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    .style2
+    {
+      height:34px;width:23px;
+    }
+  </style>
+</head>
+<body>
+	<form id="form1" runat="server">
+	<asp:ScriptManager ID="ScriptManager1" runat="server">
+		</asp:ScriptManager>
+	<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+	<ContentTemplate>
+	<div>	
+		<table width="98%" align="center">
+			<tr align="center">
+				<td valign="top" bgcolor="#EBEBEB" class="m_tdcolor_03">
+					<asp:Label ID="GridTitle" runat="server" Text=""></asp:Label>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" valign="top" style="border-style:solid; border-width:1px; border-color:#999999">	
+					<asp:GridView ID="GridView1" runat="server" BorderWidth="0px" CssClass="m_tdcolor_01"
+            CellSpacing="2" CellPadding="2" 
+						AutoGenerateEditButton="True" AutoGenerateColumns="False" DataKeyNames="PK" 
+            onselectedindexchanged="GridView1_SelectedIndexChanged" 
+						onrowcreated="GridView1_RowCreated">
+            <Columns>
+            <asp:TemplateField HeaderText="選擇">
+            <ItemTemplate>
+              <asp:RadioButton ID="RadioButton1" runat="server" />
+              <asp:CheckBox ID="CheckBox1" runat="server" />
+            </ItemTemplate>
+            </asp:TemplateField>
+              <asp:TemplateField HeaderText="&nbsp;">
+                <ItemTemplate>
+                  <asp:Image ID="Image1" runat="server" ImageUrl="../images/gif_06.gif" ImageAlign="Middle"
+                    AlternateText="eventitem" Width="10" Height="10" />
+                </ItemTemplate>
+                <HeaderStyle CssClass="m_tdcolor_01" VerticalAlign="Top" Width="5%" Wrap="False" />
+                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+              </asp:TemplateField>
+              <asp:BoundField DataField="系統" HeaderText="系統" ReadOnly="true">
+                <HeaderStyle Wrap="False" CssClass="m_tdcolor_01" Width="5%" VerticalAlign="Middle">
+                </HeaderStyle>
+                <ItemStyle VerticalAlign="Top" CssClass="style2" />
+              </asp:BoundField>
+              <asp:TemplateField HeaderText="標題">
+                <ItemTemplate>
+                  <asp:LinkButton ID="HyperLink1" runat="server" CausesValidation="false" PostBackUrl="~/QA/article.aspx" OnClientClick='<%# Eval("PK", "form1.article.value={0}") %>' Text='<%# Eval("標題") %>'></asp:LinkButton>
+                  <%--<wcc:Email ID="Email1" runat="server" Text='<%# Eval("標題") %>' Enabled=false />--%>
+
+                </ItemTemplate>
+                <EditItemTemplate>
+									<asp:TextBox ID="Txt_Headline" runat="server" Text='<%# Bind("標題") %>'  Width="98%"></asp:TextBox>
+                </EditItemTemplate>
+                <HeaderStyle CssClass="m_tdcolor_01" VerticalAlign="Middle" Wrap="False" />
+                <ItemStyle Width="100%" />
+              </asp:TemplateField>
+              <asp:BoundField DataField="作者" HeaderText="作者">
+                <HeaderStyle Wrap="False" CssClass="m_tdcolor_01" Width="5%" VerticalAlign="Middle">
+                </HeaderStyle>
+                <ItemStyle Wrap="False" />
+              </asp:BoundField>
+              <asp:BoundField DataField="最後更新日期" HeaderText="最後更新日期">
+                <HeaderStyle Wrap="False" CssClass="m_tdcolor_01" Width="15%" VerticalAlign="Middle">
+                </HeaderStyle>
+                <ItemStyle Width="15%" Wrap="False" />
+              </asp:BoundField>
+            	<asp:CommandField HeaderText="編輯" 
+								ShowEditButton="True" ButtonType="Button" />
+							<asp:CommandField HeaderText="匯出" DeleteText="匯出" 
+								 ShowDeleteButton="true" ButtonType="Button" />
+							<asp:ButtonField ButtonType="Image" HeaderText="刪除" />
+              <asp:HyperLinkField HeaderText="卸離" Text="卸離" />
+            </Columns>
+            
+            <EmptyDataTemplate>
+              <asp:Label ID="NoDataMsg" runat="server" Text="沒有任何相關資料!" ForeColor="Red" Font-Bold="true"></asp:Label>
+            </EmptyDataTemplate>
+            <HeaderStyle HorizontalAlign="Center" Font-Bold="false" Font-Size="9pt" Height="20px" />
+            <PagerSettings Visible="false" />
+          </asp:GridView>
+				</td>
+			</tr>
+			<tr>
+        <td colspan="2" width="100%" valign="top" style="border-style: solid; border-width: 1px; border-color: #999999">
+           <wcc:PageMaker ID="PageMaker1" runat="server" PageSize=10 Align="right" 
+            PagedControlID="GridView1" />
+        </td>
+      </tr>
+		</table>
+	</div>	
+	<div>
+		<table width="98%" align="center">
+			<tr align="center">
+				<td valign="top" bgcolor="#EBEBEB" class="m_tdcolor_03">
+					<asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" valign="top" style="border-style:solid; border-width:1px; border-color:#999999">
+					<wcc:NewGridView ID="GridView2" runat="server" BorderWidth="0px" 
+						CssClass="m_tdcolor_01" EmptyShowHeader="true"
+            CellSpacing="2" CellPadding="2" 
+						AutoGenerateEditButton="True" AutoGenerateColumns="False" DataKeyNames="PK" 
+            onselectedindexchanged="GridView2_SelectedIndexChanged" 
+						onrowcreated="GridView2_RowCreated">
+            <Columns>
+            <asp:TemplateField HeaderText="選擇">
+            <ItemTemplate>
+              <asp:RadioButton ID="RadioButton1" runat="server" />
+              <asp:CheckBox ID="CheckBox1" runat="server" />
+            </ItemTemplate>
+            </asp:TemplateField>
+              <asp:TemplateField HeaderText="&nbsp;">
+                <ItemTemplate>
+                  <asp:Image ID="Image1" runat="server" ImageUrl="../images/gif_06.gif" ImageAlign="Middle"
+                    AlternateText="eventitem" Width="10" Height="10" />
+                </ItemTemplate>
+                <HeaderStyle CssClass="m_tdcolor_01" VerticalAlign="Top" Width="5%" Wrap="False" />
+                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+              </asp:TemplateField>
+              <asp:BoundField DataField="系統" HeaderText="系統" ReadOnly="true">
+                <HeaderStyle Wrap="False" CssClass="m_tdcolor_01" Width="5%" VerticalAlign="Middle">
+                </HeaderStyle>
+                <ItemStyle VerticalAlign="Top" CssClass="style2" />
+              </asp:BoundField>
+              <asp:TemplateField HeaderText="標題">
+                <ItemTemplate>
+                  <asp:LinkButton ID="HyperLink1" runat="server" CausesValidation="false" PostBackUrl="~/QA/article.aspx" OnClientClick='<%# Eval("PK", "form1.article.value={0}") %>' Text='<%# Eval("標題") %>'></asp:LinkButton>
+                </ItemTemplate>
+                <EditItemTemplate>
+									<asp:TextBox ID="Txt_Headline" runat="server" Text='<%# Bind("標題") %>' Width="98%"></asp:TextBox>
+                </EditItemTemplate>
+                <HeaderStyle CssClass="m_tdcolor_01" VerticalAlign="Middle" Wrap="False" />
+                <ItemStyle Width="100%" />
+              </asp:TemplateField>
+              <asp:BoundField DataField="作者" HeaderText="作者">
+                <HeaderStyle Wrap="False" CssClass="m_tdcolor_01" Width="5%" VerticalAlign="Middle">
+                </HeaderStyle>
+                <ItemStyle Wrap="False" />
+              </asp:BoundField>
+              <asp:BoundField DataField="最後更新日期" HeaderText="最後更新日期">
+                <HeaderStyle Wrap="False" CssClass="m_tdcolor_01" Width="15%" VerticalAlign="Middle">
+                </HeaderStyle>
+                <ItemStyle Width="15%" Wrap="False" />
+              </asp:BoundField>
+            	<asp:CommandField HeaderText="編輯" 
+								ShowEditButton="True" ButtonType="Button" />
+							<asp:CommandField HeaderText="匯出" DeleteText="匯出" 
+								 ShowDeleteButton="true" ButtonType="Button" />
+							<asp:ButtonField ButtonType="Image" HeaderText="刪除" />
+              <asp:HyperLinkField HeaderText="卸離" Text="卸離" />
+            </Columns>
+            
+            <EmptyDataTemplate>
+              <asp:Label ID="NoDataMsg" runat="server" Text="沒有任何相關資料!" ForeColor="Red" Font-Bold="true"></asp:Label>
+            </EmptyDataTemplate>
+            <HeaderStyle HorizontalAlign="Center" Font-Bold="false" Font-Size="9pt" Height="20px" />
+            <PagerSettings Visible="true" />
+          </wcc:NewGridView>
+				</td>
+			</tr>
+			<tr>
+        <td colspan="2" width="100%" valign="top" style="border-style: solid; border-width: 1px; border-color: #999999">
+           <wcc:PageMaker ID="PageMaker2" runat="server" Align="right" PageSize=5
+            PagedControlID="GridView2" />
+        </td>
+      </tr>
+			<tr>
+        <td colspan="2" width="100%" valign="top" style="border-style: solid; border-width: 1px; border-color: #999999">
+        </td>
+      </tr>
+		</table>
+	</div>
+		</ContentTemplate>
+		</asp:UpdatePanel>
+  <asp:Button ID="Button3" runat="server" Text="確定" CausesValidation=true />
+    <br />
+</form>
+</body> 
+</html>

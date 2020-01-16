@@ -1,0 +1,123 @@
+﻿a {
+	color: #369;text-decoration:none
+}
+a:hover {
+	background: #369; color: #fff; 
+}
+
+h4 {margin:10px 0px}
+
+.code2 
+{
+	font-family: Arial;
+   }
+.jscode2
+{
+	overflow:auto;
+ width:90%; 
+ border:solid 1px #cfcfcf;
+
+margin-top:10px;padding:10px;
+ background-color: #eee9e9; 
+}
+
+.hdcontainer {margin:5px 0px; color:#fcbd00  }
+.hdbox {background-color:#3399cc }
+.dh {background-color:#3399cc }
+.aa51 { height:1px;
+         margin:0 5px;
+         overflow:hidden} 
+h2,.dd {margin:0px; padding: 10px; font-family:Tahoma}
+.container0 {width:200px;margin: 15px 2% 10px 2%; }
+.box0 {padding: 0px 5px;background: #66cc33;}
+
+.zbox0 {padding: 0px 5px; border-left:1px solid #999;color:#cc3300;
+        border-right:1px solid #999;
+}
+
+.db {border-left:1px solid #999;
+     border-right:1px solid #999;} 
+.dz {border-left:10px solid #999;
+     border-right:10px solid #999;}
+.dk {
+     background-color:#eee9e9}
+      
+        
+.header{
+   width: 100%;
+}
+.colmask{
+   width: 80%;
+   left: 10%
+}
+.footer{
+   width: 80%;
+   left: 10%
+}
+
+.colmask{
+   clear: both;
+   overflow: hidden;
+   position: relative;
+   background: #fff;
+   padding-top:10px;
+   
+}
+
+
+
+.footer{
+   clear: both;
+   float: left;
+   text-align:center;
+   position: relative;
+  
+}
+
+body {
+   border-width: 0px;
+   padding: 0px;
+   margin: 0px;
+   font-size: 90%;
+   width:100%;
+   font-family:Times New Roman;
+   min-width: 600px;
+}
+
+.a55, .a54, .a53, .a52, .a51
+ {overflow:hidden;}
+.a55 { height:1px;
+       margin:0 1px;}        
+.a54 { height:1px;
+       margin:0 1px;}
+.a53 { height:1px;
+       margin:0 2px;}
+.a52 { height:1px;
+       margin:0 3px;
+       border-width: 2px}
+.a51 { height:1px;
+       margin:0 5px;background:#999;}
+ 
+ 
+.mg{padding:5px;background-color:#fff;}
+.sldbox {border:solid 1px #cfcfcf; width: 90%; margin-top: 10px;padding:10px 10px 25px 10px}
+.ltt{width:150px; float:left}
+.dem{width: 50px; height: 50px;float:right;background-color:#cfcfcf}
+.hgt{height:28px
+}
+
+
+.out{margin:0px 0px 0px 20px ;width:960px;}
+.outl{width:690px;float:left;}
+.outr{width:269px;float:right}
+
+.hm{margin:10px 0px 0px 20px}
+
+.hm a {display: block; 
+   padding: 5px 0px; margin: 0 0 1px;  
+   text-decoration: none; color:#a9a9a9;
+  cursor: default; 
+   }
+  .hm a:hover{color:#fff} 
+  
+  p{margin-right:10px}

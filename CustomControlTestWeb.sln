@@ -1,0 +1,80 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCustomControls", "CustomWebControls\WebCustomControls.csproj", "{3DDB521C-8E11-4CF5-B153-2360468AF7A9}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CustomControlTestWeb", "CustomControlTestWeb\", "{7F15D290-2A6A-4ADC-8790-049842D95A7B}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{3ddb521c-8e11-4cf5-b153-2360468af7a9}|WebCustomControls.dll;{cb01f498-3fc3-4f42-a8cd-71f1e48bb9af}|DataAccess.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_3395"
+		Debug.AspNetCompiler.PhysicalPath = "CustomControlTestWeb\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3395\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_3395"
+		Release.AspNetCompiler.PhysicalPath = "CustomControlTestWeb\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3395\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3395"
+		SlnRelativePath = "CustomControlTestWeb\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{CB01F498-3FC3-4F42-A8CD-71F1E48BB9AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{7CD8E351-55BC-4F4D-B92B-95AD6B6F99A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DDB521C-8E11-4CF5-B153-2360468AF7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DDB521C-8E11-4CF5-B153-2360468AF7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DDB521C-8E11-4CF5-B153-2360468AF7A9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3DDB521C-8E11-4CF5-B153-2360468AF7A9}.Debug|x86.Build.0 = Debug|Any CPU
+		{3DDB521C-8E11-4CF5-B153-2360468AF7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DDB521C-8E11-4CF5-B153-2360468AF7A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DDB521C-8E11-4CF5-B153-2360468AF7A9}.Release|x86.ActiveCfg = Release|Any CPU
+		{3DDB521C-8E11-4CF5-B153-2360468AF7A9}.Release|x86.Build.0 = Release|Any CPU
+		{7F15D290-2A6A-4ADC-8790-049842D95A7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F15D290-2A6A-4ADC-8790-049842D95A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F15D290-2A6A-4ADC-8790-049842D95A7B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7F15D290-2A6A-4ADC-8790-049842D95A7B}.Debug|x86.Build.0 = Debug|Any CPU
+		{7F15D290-2A6A-4ADC-8790-049842D95A7B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F15D290-2A6A-4ADC-8790-049842D95A7B}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{7F15D290-2A6A-4ADC-8790-049842D95A7B}.Release|x86.ActiveCfg = Debug|Any CPU
+		{7F15D290-2A6A-4ADC-8790-049842D95A7B}.Release|x86.Build.0 = Debug|Any CPU
+		{CB01F498-3FC3-4F42-A8CD-71F1E48BB9AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB01F498-3FC3-4F42-A8CD-71F1E48BB9AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB01F498-3FC3-4F42-A8CD-71F1E48BB9AF}.Debug|x86.ActiveCfg = Debug|x86
+		{CB01F498-3FC3-4F42-A8CD-71F1E48BB9AF}.Debug|x86.Build.0 = Debug|x86
+		{CB01F498-3FC3-4F42-A8CD-71F1E48BB9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB01F498-3FC3-4F42-A8CD-71F1E48BB9AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB01F498-3FC3-4F42-A8CD-71F1E48BB9AF}.Release|x86.ActiveCfg = Release|x86
+		{CB01F498-3FC3-4F42-A8CD-71F1E48BB9AF}.Release|x86.Build.0 = Release|x86
+		{7CD8E351-55BC-4F4D-B92B-95AD6B6F99A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CD8E351-55BC-4F4D-B92B-95AD6B6F99A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CD8E351-55BC-4F4D-B92B-95AD6B6F99A7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7CD8E351-55BC-4F4D-B92B-95AD6B6F99A7}.Debug|x86.Build.0 = Debug|Any CPU
+		{7CD8E351-55BC-4F4D-B92B-95AD6B6F99A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CD8E351-55BC-4F4D-B92B-95AD6B6F99A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CD8E351-55BC-4F4D-B92B-95AD6B6F99A7}.Release|x86.ActiveCfg = Release|Any CPU
+		{7CD8E351-55BC-4F4D-B92B-95AD6B6F99A7}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10356D9D-CAAE-4317-81CB-1ABF4CAE66D2}
+	EndGlobalSection
+EndGlobal

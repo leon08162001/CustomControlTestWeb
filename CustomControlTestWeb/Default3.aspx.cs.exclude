@@ -1,0 +1,193 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using BusinessFacade;
+using APTemplate;
+
+public partial class _Default3 : System.Web.UI.Page 
+{
+    protected void Page_Init(object sender, EventArgs e)
+    {
+      if (Page.IsPostBack)
+      {
+				//string c = Email1.Text;
+        string d = "d";
+      }
+      //DropDownList_Multiple.ConnectionKey = "Default";
+      //DropDownList_Multiple.FirstSelectSQL = "select * from Customers";
+      //DropDownList_Multiple.FirstDataTextField = "CustomerName";
+      //DropDownList_Multiple.FirstDataValueField = "CustomerID";
+
+      //DropDownList_Multiple.SecondFilterField = "CustomerID";
+      //DropDownList_Multiple.SecondSelectSQL = "select * from Orders order by OrderDate desc";
+      //DropDownList_Multiple.SecondDataTextField = "OrderDate";
+      //DropDownList_Multiple.SecondDataValueField = "OrderID";
+
+      //DropDownList_Multiple.ThirdFilterField = "OrderID";
+      //DropDownList_Multiple.ThirdSelectSQL = "select * from OrderDetails as o inner join Products as p on o.ProductID=p.ProductID order by p.ProductID desc";
+      //DropDownList_Multiple.ThirdDataTextField = "ProductName";
+      //DropDownList_Multiple.ThirdDataValueField = "ProductID";
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+      //string a = DropDownList_Multiple.FirstSelectedText;
+      //string b = DropDownList_Multiple.SecondSelectedText;
+      //string c = DropDownList_Multiple.ThirdSelectedText;
+      NameValueCollection Forms = Request.Form;
+      if (!Page.IsPostBack)
+      {
+        int SubFunction = Convert.ToInt32(Request.Form["SubFunction"]);
+        ViewState["SubFunction"] = SubFunction;
+        GetQA_M_CONTENT((int)ViewState["SubFunction"]);
+      }
+      WebScript.OpenWindow(Page, "HyperLink2", EventType.OnClick, WindowType.Normal, "Default2.aspx", null, "status=yes,scrollbars=yes", 800, 500);
+      WebScript.OpenWindow(Page, "ImageButton1", EventType.OnClick, WindowType.Normal, "Default2.aspx", null, "status=yes,scrollbars=yes", 800, 500);
+      WebScript.OpenWindow(Page, "Button1", EventType.OnClick, WindowType.Normal, "Default2.aspx", null, "status=yes,scrollbars=yes", 800, 500);
+      WebScript.OpenWindow(Page, "Button2", EventType.OnClick, WindowType.Normal, "Default2.aspx", null, "status=yes,scrollbars=yes", 800, 500);
+      WebScript.OpenWindow(Page, "Submit1", EventType.OnClick, WindowType.Normal, "Default2.aspx", null, "status=yes,scrollbars=yes", 800, 500);
+      WebScript.AddClientMessageToControl(Page, "HyperLink2", EventType.OnClick, MessageType.Prompt, "hello,world!");
+      WebScript.OpenDatePicker(Page, "Calendar", "DateText", WindowType.ModalDialog, "calendar1.htm", null, "scroll:no;status:no", 150, 180, false);
+    }
+
+    protected void GetQA_M_CONTENT(int BOOCSYSTEM_PK)
+    {
+      BFLBOOCSYSTEM BOOCSYSTEM = new BFLBOOCSYSTEM();
+      BFLQA_M QA_M = new BFLQA_M();
+      DataTable Dt = null;
+      if (BOOCSYSTEM_PK == 0)
+      {
+        var Contents = from QAM in QA_M.GetTable().AsEnumerable()
+                       join BOOCSYS in BOOCSYSTEM.GetTable().AsEnumerable()
+                       on QAM.BOOCSYSTEM_PK equals BOOCSYS.PK
+                       select new { 系統 = BOOCSYS.SYSTNAME, 標題 = QAM.QACONTENT, 作者 = QAM.EMPLOYEE.EMPNAME, PK = QAM.PK, 最後更新日期 = Func.FormatDate(QA_M.Get_DetailQA_D(QAM.PK).Max(QAD => QAD.UPDATEDATE)) };
+
+        Contents = Contents.OrderByDescending(all => all.最後更新日期).Take(10);
+        Dt = Func.CopyToDataTable(Contents);
+        GridTitle.Text = "最新問題集(10筆)";
+      }
+      else
+      {
+        var Contents = from QAM in BOOCSYSTEM.Get_DetailQA_M(BOOCSYSTEM_PK).AsEnumerable()
+                       join BOOCSYS in BOOCSYSTEM.GetTable().AsEnumerable()
+                       on QAM.BOOCSYSTEM_PK equals BOOCSYS.PK
+                       select new { 系統 = BOOCSYS.SYSTNAME, 標題 = QAM.QACONTENT, 作者 = QAM.EMPLOYEE.EMPNAME, PK = QAM.PK, 最後更新日期 = Func.FormatDate(QA_M.Get_DetailQA_D(QAM.PK).Max(QAD => QAD.UPDATEDATE)) };
+
+        Contents = Contents.OrderByDescending(all => all.最後更新日期);
+        Dt = Func.CopyToDataTable(Contents);
+        GridTitle.Text = "問題集";
+      }
+			//Dt.Rows.Clear();
+      GridView1.DataKeyNames = new string[] { "PK" };
+      GridView1.DataSource = Dt;
+      GridView1.DataBind();
+
+			GridView2.DataKeyNames = new string[] { "PK" };
+			GridView2.DataSource = Dt;
+			GridView2.DataBind();
+    }
+
+    protected void btn_Click(object sender, EventArgs e)
+    {
+      string a, b;
+      a = "a";
+      b = "b";
+    }
+    protected void WebButtonBase1_Command(object sender, CommandEventArgs e)
+    {
+      string a, b;
+      a = "a";
+      b = "b";
+    }
+    protected void Button_ConfirmYesNo1_Click(object sender, EventArgs e)
+    {
+      string a, b;
+      a = "a";
+      b = "b";
+    }
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+		protected void GridView2_RowCreated(object sender, GridViewRowEventArgs e)
+		{
+			//if (e.Row.RowType == DataControlRowType.Header)
+			//{
+			//  int cunt = e.Row.Cells.Count;
+			//  string a = e.Row.Cells[0].Text;
+			//  string c = e.Row.Cells[2].Text;
+			//  string d = e.Row.Cells[3].Text;
+			//  NewGridView gv = (NewGridView)sender;
+			//  GridViewRow gvRow = new GridViewRow(0, 0, DataControlRowType.Header, DataControlRowState.Insert);
+			//  TableCell tc1_1 = new TableCell();
+			//  tc1_1.Text = "大標題";
+			//  tc1_1.RowSpan = 3;
+			//  tc1_1.Wrap = false;
+			//  tc1_1.HorizontalAlign = HorizontalAlign.Center;
+			//  gvRow.Cells.Add(tc1_1);
+
+			//  TableCell tc1_2 = new TableCell();
+			//  tc1_2.Text = "上日結存";
+			//  tc1_2.ColumnSpan = 2;
+			//  tc1_2.Wrap = false;
+			//  tc1_2.HorizontalAlign = HorizontalAlign.Center;
+			//  gvRow.Cells.Add(tc1_2);
+
+			//  TableCell tc1 = new TableCell();
+			//  tc1.Text = "進貨量";
+			//  tc1.ColumnSpan = 2;
+			//  tc1.Wrap = false;
+			//  tc1.HorizontalAlign = HorizontalAlign.Center;
+			//  gvRow.Cells.Add(tc1);
+			//  gv.Controls[0].Controls.AddAt(0, gvRow);
+			//}
+		}
+		protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
+		{
+			if (e.Row.RowType == DataControlRowType.Header)
+			{
+				int cunt = e.Row.Cells.Count;
+				string a = e.Row.Cells[0].Text;
+				string c = e.Row.Cells[2].Text;
+				string d = e.Row.Cells[3].Text;
+				GridView gv = (GridView)sender;
+				GridViewRow gvRow = new GridViewRow(0, 0, DataControlRowType.Header, DataControlRowState.Insert);
+				TableCell tc1_1 = new TableCell();
+				tc1_1.Text = "大標題";
+				tc1_1.ColumnSpan = 4;
+				tc1_1.Wrap = false;
+				tc1_1.HorizontalAlign = HorizontalAlign.Center;
+				gvRow.Cells.Add(tc1_1);
+
+				TableCell tc1_2 = new TableCell();
+				tc1_2.Text = "上日結存";
+				tc1_2.ColumnSpan = 3;
+				tc1_2.Wrap = false;
+				tc1_2.HorizontalAlign = HorizontalAlign.Center;
+				gvRow.Cells.Add(tc1_2);
+
+				TableCell tc1 = new TableCell();
+				tc1.Text = "進貨量";
+				tc1.ColumnSpan = 3;
+				tc1.Wrap = false;
+				tc1.HorizontalAlign = HorizontalAlign.Center;
+				gvRow.Cells.Add(tc1);
+				gv.Controls[0].Controls.AddAt(0,gvRow);
+			}
+		}
+}

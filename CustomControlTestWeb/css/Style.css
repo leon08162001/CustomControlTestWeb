@@ -1,0 +1,33 @@
+﻿table.pageFontStyle
+{
+    font-family: 標楷體;
+    font-style:normal;
+    font-size:13pt;
+}
+
+.englishFont
+{
+    font-family: Calibri;
+    font-style:normal;
+    font-size:13pt;
+}
+
+#progress { 
+ width: 200px;    
+ border: 1px solid black; 
+ position: relative;
+ padding: 1px;
+ display: none;
+} 
+ 
+#percent { 
+ position: absolute;
+ color :Red;
+ left:15%; 
+} 
+ 
+#bar { 
+ height: 16px; 
+ background-color:Transparent; 
+ width: 0; 
+} 

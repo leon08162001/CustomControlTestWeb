@@ -1,0 +1,157 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using APTemplate;
+
+public partial class _Default : System.Web.UI.Page
+{
+  protected void Page_Load(object sender, EventArgs e)
+  {
+		//long Num1 = Number1.Text;
+		//string PopCalendar = PopupCalendar1.Text.ToString("yyyy/MM/dd");
+		//decimal DecRange1 = DecimalRange1.FirstText;
+		//decimal DecRange2 = DecimalRange1.SecondText;
+		//string Mail1 = Email1.Text;
+		//string CalRange1 = CalendarRange1.FirstText.ToString("yyyy/MM/dd");
+		//string CalRange2 = CalendarRange1.SecondText.ToString("yyyy/MM/dd");
+		//string PopWindowText = TextBox_PopupWindow1.Text;
+		//decimal NumDecimal1 = Number_Decimal1.Text;
+		//string Identity = Identity1.Text;
+		//long NumRange1 = NumberRange1.FirstText;
+		//long NumRange2 = NumberRange1.SecondText;
+		if (!Page.IsPostBack)
+		{
+			//long Number1_A = Convert.ToInt64(Request.Form["Number1$A"].ToString());
+			//string PopupCalendar1_A = Request.Form["PopupCalendar1$A"].ToString();
+			//decimal DecimalRange1_A = Convert.ToDecimal(Request.Form["DecimalRange1$A"].ToString());
+			//decimal DecimalRange1_B = Convert.ToDecimal(Request.Form["DecimalRange1$B"].ToString());
+			//string Email1_A = Request.Form["Email1$A"].ToString();
+			//string CalendarRange1_A = Request.Form["CalendarRange1$A"].ToString();
+			//string CalendarRange1_B = Request.Form["CalendarRange1$B"].ToString();
+			//string TextBox_PopupWindow1_A = Request.Form["TextBox_PopupWindow1$A"].ToString();
+			//decimal Number_Decimal1_A = Convert.ToDecimal(Request.Form["Number_Decimal1$A"].ToString());
+			//string Identity1_A = Request.Form["Identity1$A"].ToString();
+			//long NumberRange1_A = Convert.ToInt64(Request.Form["NumberRange1$A"].ToString());
+			//long NumberRange1_B = Convert.ToInt64(Request.Form["NumberRange1$B"].ToString());
+
+      //ListBoxToListBox1.FirstListBox.Items.Add("A");
+      //ListBoxToListBox1.FirstListBox.Items.Add("B");
+
+      //SqlConnection conn = new SqlConnection("Data Source=(local);Initial Catalog=BoocManage;User ID=BoocManage;Password=!QAZ2wsx");
+      //SqlCommand cmd = new SqlCommand("select * from Customers where CustomerID<=3", conn);
+      //SqlCommand cmd1 = new SqlCommand("select * from Customers where CustomerID>3", conn);
+      //SqlDataAdapter DA = new SqlDataAdapter(cmd);
+      //SqlDataAdapter DA1 = new SqlDataAdapter(cmd1);
+      //DataTable DT = new DataTable();
+      //DataTable DT1 = new DataTable();
+      //DA.Fill(DT);
+      //DA1.Fill(DT1);
+      //ListBoxToListBox1.FirstListBox.DataSource = DT;
+      //ListBoxToListBox1.FirstListBox.DataValueField = "CustomerID";
+      //ListBoxToListBox1.FirstListBox.DataTextField = "CustomerName";
+      //ListBoxToListBox1.FirstListBox.DataBind();
+      //ListBoxToListBox1.SecondListBox.DataSource = DT1;
+      //ListBoxToListBox1.SecondListBox.DataValueField = "CustomerID";
+      //ListBoxToListBox1.SecondListBox.DataTextField = "CustomerName";
+      //ListBoxToListBox1.SecondListBox.DataBind();
+
+      //ListBoxToListBox2.FirstListBox.DataSource = DT;
+      //ListBoxToListBox2.FirstListBox.DataValueField = "CustomerID";
+      //ListBoxToListBox2.FirstListBox.DataTextField = "CustomerName";
+      //ListBoxToListBox2.FirstListBox.DataBind();
+      //ListBoxToListBox2.SecondListBox.DataSource = DT1;
+      //ListBoxToListBox2.SecondListBox.DataValueField = "CustomerID";
+      //ListBoxToListBox2.SecondListBox.DataTextField = "CustomerName";
+      //ListBoxToListBox2.SecondListBox.DataBind();
+		}
+		DropDownList_Multiple.ConnectionKey = "Default";
+		DropDownList_Multiple.FirstSelectSQL = "select * from Customers";
+		DropDownList_Multiple.FirstDataTextField = "CustomerName";
+		DropDownList_Multiple.FirstDataValueField = "CustomerID";
+		DropDownList_Multiple.SecondFilterField = "CustomerID";
+		DropDownList_Multiple.SecondSelectSQL = "select * from Orders order by OrderDate desc";
+		DropDownList_Multiple.SecondDataTextField = "OrderDate";
+		DropDownList_Multiple.SecondDataValueField = "OrderID";
+		DropDownList_Multiple.ThirdFilterField = "OrderID";
+		DropDownList_Multiple.ThirdSelectSQL = "select * from OrderDetails as o inner join Products as p on o.ProductID=p.ProductID order by p.ProductID desc";
+		DropDownList_Multiple.ThirdDataTextField = "ProductName";
+		DropDownList_Multiple.ThirdDataValueField = "ProductID";
+
+    //DropDownList_Multiple1.ConnectionKey = "Default";
+    //DropDownList_Multiple1.FirstSelectSQL = "select * from Customers";
+    //DropDownList_Multiple1.FirstDataTextField = "CustomerName";
+    //DropDownList_Multiple1.FirstDataValueField = "CustomerID";
+    //DropDownList_Multiple1.SecondFilterField = "CustomerID";
+    //DropDownList_Multiple1.SecondSelectSQL = "select * from Orders order by OrderDate desc";
+    //DropDownList_Multiple1.SecondDataTextField = "OrderDate";
+    //DropDownList_Multiple1.SecondDataValueField = "OrderID";
+    //DropDownList_Multiple1.ThirdFilterField = "OrderID";
+    //DropDownList_Multiple1.ThirdSelectSQL = "select * from OrderDetails as o inner join Products as p on o.ProductID=p.ProductID order by p.ProductID desc";
+    //DropDownList_Multiple1.ThirdDataTextField = "ProductName";
+    //DropDownList_Multiple1.ThirdDataValueField = "ProductID";
+		//Decimal DecimalRange = DecimalRange11.FirstText;
+		//Decimal DecimalRange1 = DecimalRange11.SecondText;
+    //string TextBox_PopupWindow1 = TextBox_PopupWindow11.Text;
+    //DateTime Birthday = DropDownList_Date11.Date;
+    
+  }
+
+  protected void ToolBar_Click(Object sender, EventArgs e)
+	{
+    //ToolButton ToolButton = (ToolButton)sender;
+    //string ClickArgument = ToolButton.ClickArgument;
+    //string ImageUrl = ToolButton.ImageUrl;
+    //string ToolTip = ToolButton.ToolTip;
+    //string id = Identity1.Text;
+    //long Num1 = Number1.Text;
+    //DateTime Calendar1=PopupCalendar1.Text;
+    //decimal Decimal1 = DecimalRange1.FirstText;
+    //decimal Decimal2 = DecimalRange1.SecondText;
+    //string mail1 = Email1.Text;
+    //string a = "a";
+    //string b = "b";
+
+		ToolBarButton ToolButton = (ToolBarButton)sender;
+		string MediaPath = "http://localhost:90/Media/";
+		string MediaFile = ToolButton.ClickArgument;
+		MediaPlayer1.Url = MediaPath + MediaFile;
+	}
+
+  protected void ToolBar2_Click(Object sender, EventArgs e)
+  {
+    string id = Identity1.Text;
+    long Num1 = Number1.Text;
+    DateTime Calendar1 = PopupCalendar1.FirstDate;
+    decimal Decimal1 = DecimalRange1.FirstText;
+    decimal Decimal2 = DecimalRange1.SecondText;
+    string mail1 = Email1.Text;
+    string a = "a";
+    string b = "b";
+  }
+
+  //protected void Button_ConfirmYesNoClick(Object sender, EventArgs e)
+  //{
+  //  string a = "a";
+  //  string b = "b";
+  //}
+
+  //protected void Button_NormalClick(Object sender, EventArgs e)
+  //{
+  //  string a = "a";
+  //  string b = "b";
+  //}
+  protected void ToolBar1_Button_ConfirmYesNoClick(object sender, EventArgs e)
+  {
+    string a = "";
+  }
+}

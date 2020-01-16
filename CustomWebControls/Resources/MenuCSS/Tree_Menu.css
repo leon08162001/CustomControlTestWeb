@@ -1,0 +1,110 @@
+/*!!!!!!!!!!! Add-On Core Code (Remove when not using any add-on's)*/
+.qmfv{visibility:visible !important;}.qmfh{visibility:hidden !important;}
+
+/*!!!!!!!!!!! QuickMenu Core CSS [Do Not Modify!] !!!!!!!!!!!!!*/
+.qmclear {font-size:1px;height:0px;width:0px;clear:left;line-height:0px;display:block;}.qmmc {position:relative;}.qmmc a {float:left;display:block;white-space:nowrap;}.qmmc div a {float:none;}.qmsh div a{float:left;}.qmmc div {visibility:hidden;position:absolute;}
+
+
+/*!!!!!!!!!!! QuickMenu Styles [Please Modify!] !!!!!!!!!!!*/
+
+
+	/* Remove the comments bleow for vertical mains and change the false value to
+           true in the qm_create function after the menus structure. */
+	/*.qmmc a {float:none}*/
+
+		
+
+	/*"""""""" (MAIN) Container """"""""*/
+	#qm0
+	{ 
+		background-color:transparent;
+		border-style:solid;
+		border-color:#66cc00;
+		border-width:1px 2px 1px 2px;
+	}
+
+
+	 /*"""""""" (MAIN) Items """"""""*/
+	#qm0 a
+	{
+		color:#<#MainItem_ForeColor#>;
+		*background-color:#<#MainItem_BgColor#>;
+		/*background-image:url(ControlImages/tree_green_bg.gif); */
+		font-family:Arial;
+		font-size:.8em;
+		text-decoration:none;
+		padding:5px 5px 5px 8px;
+		border-style:solid;
+		border-color:#66cc00;
+		border-width:1px 0px 1px 0px;
+	}
+
+
+	/*"""""""" (MAIN) Hover State """"""""*/
+	#qm0 a:hover
+	{ 
+		background-color:#<#Item_HoverBgColor#>;
+		/*background-color:#efefef;*/
+	}
+
+
+	/*"""""""" (MAIN) Active State """"""""*/	
+	body #qm0 .qmactive, body #qm0 .qmactive:hover
+	{ 
+		text-decoration:underline;
+	}
+
+
+	/*"""""""" (MAIN) Parent Items """"""""*/
+	#qm0 .qmparent
+	{
+		/*background-image:url(images/arrow_down.gif);
+		background-repeat:no-repeat;
+		background-position:95%;*/
+	}
+
+
+	/*"""""""" [SUB] Containers """"""""*/
+	#qm0 div
+	{
+		/*background-image:url(images/green_bg2.gif);*/
+		background-color:#<#SubItem_BgColor#>;
+		padding:5px 0px 0px 0px;
+		border-style:none;
+		border-width:1px;
+		border-color:#<#SubItem_BgColor#>;
+		margin-top:-1px;
+	}
+
+	/*"""""""" [SUB] Items """"""""*/
+	#qm0 div a
+	{		
+		color:#<#SubItem_ForeColor#>;
+		background-image:none;
+		background-color:transparent;
+		padding:2px 0px 2px 15px;
+		border-width:1px;
+		border-style:solid;
+		border-color:#<#SubItem_BgColor#>;
+		margin:0px 5px 0px 5px;
+	}
+	
+	/*"""""""" [SUB] Hover State """"""""*/
+	#qm0 div a:hover
+	{
+		background-color:#<#Item_HoverBgColor#>;
+		text-decoration:underline;
+	}
+
+	/*""""""""[SUB] Active State """"""""*/
+	body #qm0 div .qmactive, body #qm0 div
+	{
+		background-color:#<#SubItem_BgColor#>;
+		border-color:#999999;
+	}
+
+	/*"""""""" [SUB] Parent Items """"""""*/
+	#qm0 div .qmparent 
+	{
+		/*background-image:url(images/arrow_right.gif);*/
+	}

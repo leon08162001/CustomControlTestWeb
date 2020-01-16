@@ -1,0 +1,18 @@
+﻿body
+{
+}
+.backGround
+{
+	background-image:url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.bold.png")%>');
+	width:100px;
+	background-repeat:no-repeat;
+}
+.bg2
+{
+	background:url(<%=WebResource("APTemplate.Resources.HtmlEditor.cut.png")%>)
+    background-repeat:no-repeat;
+	border: 0px; 
+	height: 21px; 
+	width: 21px;
+    background-color:Red;
+}

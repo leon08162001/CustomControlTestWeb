@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+using AjaxPro;
+
+public partial class Default31 : System.Web.UI.Page
+{
+	private string ConnStr;
+  protected void Page_Load(object sender, EventArgs e)
+  {
+		//if (!IsPostBack)
+		//{
+		//  ConnStr = ConfigurationManager.ConnectionStrings["RPSPLUS"].ConnectionString;
+		//  DataTable DT = DB.Branch.GetBranchCodeOfBranch(ConnStr);
+		//  for (int i = 0; i < DT.Rows.Count; i++)
+		//  {
+		//    ListItem LI = new ListItem(DT.Rows[i]["BranchName"].ToString(), DT.Rows[i]["BranchCode"].ToString());
+		//    DropDownList1.Items.Add(LI);
+		//  }
+		//}
+
+		AjaxPro.Utility.RegisterTypeForAjax(typeof(Default31));
+		//SaveAjaxViewState(DropDownList1, DropDownList1.ID);
+  }
+
+	[AjaxMethod(HttpSessionStateRequirement.ReadWrite)]
+	public DataTable GetBranchCodeOfBranch()
+	{
+		ConnStr = ConfigurationManager.ConnectionStrings["RPSPLUS"].ConnectionString;
+		DataTable DT = DB.Branch.GetBranchCodeOfBranch(ConnStr);
+		//DropDownList DDL1 = (DropDownList)GetAjaxViewState("DropDownList1");
+		//for (int i = 0; i < DT.Rows.Count; i++)
+		//{
+		//  ListItem LI = new ListItem(DT.Rows[i]["BranchName"].ToString(), DT.Rows[i]["BranchCode"].ToString());
+		//  DDL1.Items.Add(LI);
+		//}
+		//((IStateManager)DDL1.Items).SaveViewState();
+		//SaveAjaxViewState(DDL1, DDL1.ID);
+		return DT;
+	}
+
+	protected void Page_PreRender(object sender, EventArgs e)
+	{
+		//string script = "<script language=javascript> \n" +
+		//    "\t function IdentityCallback(source, arguments) { \n" +
+		//    "\t var res = AjaxService.identity.CheckID(arguments.Value); \n" +
+		//    "\t arguments.IsValid=(res.value); \n" +
+		//    "} \n" +
+		//    "</script>";
+		//string ClientScript = script;
+		//Page.RegisterStartupScript(TextBox1.ClientID + "_ValidScript", ClientScript);	
+		//Button1.Attributes["onclick"] = "GetBranchCodeOfBranchCallBack('" + ConnStr +"');return false;";
+		Button1.Attributes["onclick"] = "GetBranchCodeOfBranchCallBack();return false;";
+	}
+
+	protected void Button2_Click(object sender, EventArgs e)
+	{
+		//string txt = DropDownList1.SelectedItem.Text;
+	}
+}

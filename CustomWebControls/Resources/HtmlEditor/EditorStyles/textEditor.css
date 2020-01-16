@@ -1,0 +1,1060 @@
+﻿body 
+{
+	
+}
+
+.iFrame
+{
+	border: 0px;
+	width: 500px;
+	border:1px;
+	border-style:dashed;
+	height:400px;
+	float:right;
+}
+
+.iFrameParentTd
+{
+	padding-left:0px;
+}
+
+
+.slider
+{
+	background-color:#F1F0F0;
+	background-repeat:no-repeat;
+}
+
+.comboBox
+{
+	border:1px;
+	border-style:ridge;
+	border-color:#E5E5E5;
+	font-family:Tahoma;
+	font-weight:normal;
+}
+
+.option
+{
+	font-family:Arial Greek;
+}
+.Buttons
+{
+	border-style:none;
+	border:0px;
+	font-family:arial;
+	font-size:x-small;
+	color:#817E7E;
+	border-style:dotted;
+}
+
+.pickerComboBox
+{
+	width:40px;
+	height:20px;
+	border:0px;
+	border-style:none;
+}
+
+.textArea
+{
+	border:2px;
+	font-family:Tw Cen MT;
+	font-size:small;
+	color:#817E7E;
+	border-style:dotted;
+	display:none;
+	width: 500px;
+	height: 400px;
+	background-color:#FEFFD7;
+	padding:10px;
+}
+::selection 
+{
+	background:red;
+	color:#fff;
+}
+
+.BoldButtons
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.text_bold.png")%>');
+    background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.loading
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.loadign.gif")%>');
+    background-repeat:no-repeat;
+    width:300px;
+    height:100px;
+    position:absolute;
+    padding-left:18px;
+}
+
+
+.BoldButtons_on
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.text_bold_on.png")%>');
+    background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+
+.undoButtons
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.undo.png")%>');
+    background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.redoButtons
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.redo.png")%>');
+    background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.insertRadioButtons
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.ui_radio_button.png")%>');
+    background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.strikeThroughButtons
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.text_strikethrough.png")%>');
+    background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.createdLinkOptions
+{
+	background-color:#55D500;
+	color:white;
+	border:0px;
+}
+.linkCreatorSelection
+{
+	margin-left:10px;
+	width:203px;
+	background-color:#55D500;
+	color:white;
+	border:0px;
+	width:202px;
+}
+
+.ItalicButtons
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.text_italic.png")%>');
+    background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.ItalicButtons_on
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.text_italic_on.png")%>');
+    background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.previewButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.preview.png")%>');
+    background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.UnderLineButtons
+{
+	background-image:url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.underline.png")%>');
+    background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.UnderLineButtons_on
+{
+	background-image:url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.underline_on.png")%>');
+    background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.pageBreak
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.page_break.png")%>');
+    background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+
+.indent
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.indent.png")%>');
+	background-repeat:no-repeat;
+	border: 0px;
+     height: 16px;
+      width: 18px;
+}
+
+.outdent
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.outdent.png")%>');
+	background-repeat:no-repeat;
+	border: 0px;
+     height: 16px;
+      width: 18px;
+}
+
+.LeftJustify
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.format_justify_left.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+       
+}
+
+.RightJustify
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.format_justify_right.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+       
+}
+
+.ltrButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.ltr_direction.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.rtlButton
+{
+	border-style: none;
+	border-color: inherit;
+	border-width: 0px;
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.rtl_direction.png")%>');
+	background-repeat:no-repeat;
+	height: 16px; 
+	width: 18px;
+}
+
+
+.ltrButton_on
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.ltr_direction_on.png")%>');
+	background-repeat:no-repeat;
+	border: 1px; 
+	height: 16px; 
+	width: 18px;
+	border-style:solid;
+}
+
+.rtlButton_on
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.rtl_direction_on.png")%>');
+	background-repeat:no-repeat;
+	height: 16px; 
+	width: 18px;
+	border: 1px; 
+	border-style:solid;
+}
+
+
+.CenterButtons
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.text_align_center.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.subScriptButtons
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.subscript.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.superScriptButtons
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.superscript.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+
+
+.fontFamilyImage
+{
+	width: 20px; 
+	 height: 20px ;
+}
+
+.NumberedList
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.text_list_numbers.png")%>');
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+	background-repeat:no-repeat;
+}
+
+.BulletList
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.bullets.png")%>');
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+	background-repeat:no-repeat;
+}
+
+
+.NumberedList_RTL
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.text_list_numbers-RTL.png")%>');
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+	background-repeat:no-repeat;
+}
+
+.BulletList_RTL
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.bullets_RTL.png")%>');
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+	background-repeat:no-repeat;
+}
+
+.InsertedTable
+{
+	width:220px;
+	height:100px;
+	background-color:#B2B2B2;
+	padding-top:0px;
+	padding-left:10px;
+	position:absolute;
+	cursor:move;
+}
+
+.InsertedTable-TD
+{
+	width:80px;
+	height:20px;
+	background-color:#B2B2B2;
+	padding-left:5px;
+	font-family:Courier New;
+	font-size:small;
+	vertical-align:top;
+}
+
+
+.createDynamicTable_Header
+{
+	font-family:Comic Sans MS;
+	background-color:#FE5111;
+	width:80px;
+	color:White;
+	font-size:small;
+	font-weight:bold;
+	vertical-align:top;
+}
+
+
+.createDynamicTableForm_Table
+{
+	background-color:White;
+	position:absolute;
+}
+
+.createDynamicTableForm_TD
+{
+	background-color:#B2B2B2;
+	width:80px;
+	padding:5px;
+	font-family:Comic Sans MS;
+	font-size:small;
+	vertical-align:bottom;
+	border:1px;
+	border-style:solid;
+	border-color:#C1C1C1;
+	color:White;
+}
+
+.InsertedDynamicTable_TD
+{
+	height:30px;
+	width:80px;
+	padding:5px;
+	font-family:Courier New;
+	font-size:small;
+	vertical-align:bottom;
+	border:1px;
+	border-style:solid;
+	border-color:#C1C1C1;
+}
+
+.createDynamicTableForm_DesignButton
+{
+	background-color:#EAEAEA;
+	width:16px;
+	height:16px;
+	border:0px;
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.table.png")%>');
+	background-repeat:no-repeat;
+	padding-top:3px;
+	cursor:pointer;
+}
+
+.createDynamicButton_Header
+{
+	background-color:#B9B8B8;
+	color:White;
+	width:80px;
+	padding:1px;
+	font-family:Courier New;
+	font-size:small;
+	font-weight:bold;
+	vertical-align:bottom;
+}
+
+.InsertedTable-TR
+{
+	
+}
+
+
+
+.HorizontalLine
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.HorizontalLine.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.TableGeneratorForm_textBox
+{
+	border:1px;
+	border-style:dotted;
+	background-color:#FEFCCD;
+	color:#01AC04;
+	width:30px;
+	font-weight:bold;
+	margin-left:10px;
+}
+
+.ButtonGeneratorForm_textBox
+{
+	border:1px;
+	border-style:dotted;
+	background-color:#FEFCCD;
+	color:#01AC04;
+	width:110px;
+}
+
+
+
+.InsertImage
+{
+	border-style: none;
+	border-color: inherit;
+	border-width: 0px;
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.insert_image.png")%>');
+	height: 16px; 
+	width: 25px;
+}
+
+.Copy
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.copy.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.Paste
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.paste.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.Cut
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.cut.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.Panels
+{
+	border:1px;
+	border-color:#D2D2D1;
+	border-style:ridge;
+	vertical-align:bottom;
+	background-color:#F1F1F1;
+}
+
+.ParentPanels
+{
+	border:1px;
+	border-color:#D2D2D1;
+	border-style:ridge;
+	vertical-align:bottom;
+	background-color:#D6D6D6;
+}
+
+.FontSizeImage
+{
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.PrintButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.printer.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+
+
+.eraserButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.eraser.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+
+.SaveasButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.save_as.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+
+.insertTextBoxButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.insert_textbox.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+
+.insertButton-Button
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.insert_button.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+.insertComboBoxButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.insert_combobox.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+.insertListBoxButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.insert_listBox.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+.inserTextAreaButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.insert_textarea.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+.insertCheckBoxButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.insert_checkbox.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+.insertPasswordButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.insert_password.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+
+.insertFileUploadButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.insert_fileUpload.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+
+
+.ViewSourceButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.Htmlsource.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+
+.ViewDesignModeButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.editorMode.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+
+
+.SelectAll
+{
+	
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.select_all.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+
+.insertSWF
+{
+	
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.swf.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+
+.HighlighterButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.highlighter_text.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+
+.insertSpecialCharacterButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.character_set.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+
+
+.createTableIcon
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.createtable.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+.CreateLink
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.link2.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+.BreakLink
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.link_break.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;
+}
+
+.createdDiv
+{
+	cursor:move;
+	width:220px;
+	height:100px;
+	background-color:#B2B2B2;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:10px;
+	padding-top:0px;
+	position: relative;
+	opacity:1.0;
+}
+
+
+.resizerTD
+{
+	background-color:#B6B5B5;
+	height:3px;
+	width:500px;
+	cursor:n-resize;
+	position:absolute;
+}
+
+.createdButton
+{
+	width:70px;
+	height:20px;
+	background-color:#1FDB02;
+	border:0px;
+	color:White;
+	margin-left:70px;
+	margin-top:10px;
+	cursor:pointer;
+}
+
+.createUploadButton
+{
+	width:70px;
+	height:20px;
+	background-color:#00B6CC;
+	border:0px;
+	color:White;
+	cursor:pointer;
+}
+
+.cxb
+{
+	padding-left:45px;
+}
+
+.createdButtonForInsertButton
+{
+	width:70px;
+	height:20px;
+	background-color:#1FDB02;
+	border:0px;
+	color:White;
+	margin-left:15px;
+	margin-top:10px;
+}
+
+.TransparentdDiv
+{
+	background-color:#989898;
+	filter:alpha(opacity=50);
+	opacity:0.9;
+	position:absolute;
+	top:0px;
+	left:0px;
+	
+}
+
+.createdTextBox
+{
+	width:200px;
+	height:20px;
+	background-color:#FEFFDC;
+	border:0px;
+	color:Green;
+	margin-left:10px;
+	margin-top:0px;
+	font-weight:bold;
+	font-style:italic;
+	font-size:small;
+}
+
+.createdTextLine
+{
+	color:#7A7C79;
+	font-weight:bold;
+	font-size:small;
+	margin-left:60px;
+	margin-top:0px;
+	font-family:Comic Sans MS;
+	background-color:#FE5111;
+	color:White;
+	width:100px;
+	border:1px;
+	
+}
+
+.createdTextLineForTD
+{
+	color:#7A7C79;
+	font-weight:bold;
+	font-size:small;
+	font-family:Comic Sans MS;
+	background-color:#FE5111;
+	color:White;
+}
+
+.unSelectedCols
+{
+	border:1px;
+	border-style:inset;
+	background-color:white;
+	border-color:#28D5FF;
+	width:15px;
+	height:15px;
+}
+
+.SelectedsubCols
+{
+	border:2px;
+	border-style:solid;
+	border-color:#FF4D00;
+	width:15px;
+	height:15px;
+}
+
+.colorPickerDiv
+{
+	text-decoration:none;
+	position:absolute;
+	display:none;
+	
+}
+
+.colorPickerButton
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.colorPicker.png")%>');
+	background-repeat:no-repeat;
+	border: 0px; 
+	height: 16px; 
+	width: 18px;	
+}
+
+.MoveProvider
+{
+	cursor:move;	
+	width:30px;
+}
+
+.advanceColorPickerDiv
+{
+	position:absolute;
+	display:none;
+}
+
+.fontFamilyComboBox
+{
+	border:0px;
+	background-color:#FCF8B8;
+	width:105px;
+}
+
+.fontSizeComboBox
+{
+	border:0px;
+	background-color:#FCF8B8;
+	width:73px;
+}
+.unActiveSpecialCharactersCell
+{
+	background-color:#B2B2B2;
+	width:70px;
+	padding:5px;
+	font-family:Comic Sans MS;
+	font-size:small;
+	vertical-align:bottom;
+	border:1px;
+	border-style:solid;
+	border-color:White;
+	color:White;
+	position: relative;
+	opacity:1.0;
+}
+
+.unActiveSpecialCharactersTable
+{
+	background-color:#6A6A6A;
+	width:360px;
+	padding:5px;
+	color:White;
+	position: relative;
+	opacity:1.0;
+}
+
+.activeSpecialCharactersCell
+{
+	background-color:#D50101;
+	width:70px;
+	padding:5px;
+	font-family:Comic Sans MS;
+	font-size:small;
+	vertical-align:bottom;
+	border:1px;
+	border-style:solid;
+	border-color:White;
+	color:White;
+	position: relative;
+	opacity:1.0;
+}
+
+.header_SpecialCharacterTable
+{
+	background-color:#18BB00;
+	width:200px;
+	height:30px;
+	cursor:pointer;
+	border:0px;
+	font-family:arial;
+	font-family:xx-small;
+	vertical-align:middle;
+}
+
+.showBigSize
+{
+	width:200px;
+	height:50px;
+	background-color:White;
+	vertical-align:middle;
+	font-size:xx-large;
+	font-weight:bold;
+	color:Black;
+}
+
+.specialChar_LeftTd
+{
+	vertical-align:top;
+}
+
+.specialChar_RightTd
+{
+	vertical-align:top;
+	width:200px;
+}
+
+.insertSWF_Header_Left
+{
+	width:50px;
+	height:10px;
+}
+
+.SWFPreviewDiv
+{
+	height:100px;
+	background-color:#C8C8C8;
+}
+
+.uploadFile
+{
+	border:0px;
+	border-style:hidden;
+	background-color:#FEFFDC;
+}
+
+.SWFFileURL
+{
+	width:230px;
+	height:20px;
+	background-color:#FEFFDC;
+	border:0px;
+	color:Green;
+	font-weight:bold;
+	font-weight:bold;
+	font-style:italic;
+	font-size:small;
+}
+
+.SWFWidthTextBox
+{
+	width:35px;
+	height:20px;
+	border:0px;
+	background-color:#6D6D6D;
+	color:white;
+	font-weight:bold;
+	font-weight:bold;
+	font-size:small;
+}
+
+.SWFHeightTextBox
+{
+	width:35px;
+	height:20px;
+	border:0px;
+	background-color:#6D6D6D;
+	color:white;
+	font-weight:bold;
+	font-size:small;
+}
+
+.previewSWF
+{
+	width:235px;
+	height:100px;
+}
+
+.SWFConfrimCheckBox
+{
+	cursor:default;	
+}
+
+.cke_flash
+{
+	background-image: url('<%=WebResource("APTemplate.Resources.HtmlEditor.RichTextBoxIcons.swfBackground.png")%>');
+}
+.cc
+{
+	width:0px;	
+}

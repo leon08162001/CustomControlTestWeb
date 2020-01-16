@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3DDB521C-8E11-4CF5-B153-2360468AF7A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>APTemplate</RootNamespace>
+    <AssemblyName>WebCustomControls</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxPro.2">
+      <HintPath>..\DLL\AjaxPro.2.dll</HintPath>
+    </Reference>
+    <Reference Include="AntiXssLibrary, Version=4.3.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\AntiXssLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizationLibrary, Version=4.3.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\HtmlSanitizationLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagingToolkit.QRCode, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\PublicFunc.cs" />
+    <Compile Include="Class\ServerControlConverter.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\ActiveX\ActiveX.cs" />
+    <Compile Include="WebControls\ActiveX\ActiveXParamCollection.cs" />
+    <Compile Include="WebControls\AjaxMultiUpload\MultiUploadFinishedEventArgs.cs" />
+    <Compile Include="WebControls\BarCode\BarCode.cs" />
+    <Compile Include="WebControls\BarCode\BarcodeCommon.cs" />
+    <Compile Include="WebControls\BarCode\BarCodeImageHandler.cs" />
+    <Compile Include="WebControls\BarCode\IBarcode.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\Codabar.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\Code11.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\Code128.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\Code39.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\Code93.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\EAN13.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\EAN8.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\FIM.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\Interleaved2of5.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\ISBN.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\ITF14.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\JAN13.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\MSI.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebControls\BarCode\Symbologies\Pharmacode.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\Postnet.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\Standard2of5.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\Telepen.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\UPCA.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\UPCE.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\UPCSupplement2.cs" />
+    <Compile Include="WebControls\BarCode\Symbologies\UPCSupplement5.cs" />
+    <Compile Include="WebControls\Button_ConfirmYesNo\Button_ConfirmYesNo.cs" />
+    <Compile Include="WebControls\Button_Normal\Button_Normal.cs" />
+    <Compile Include="WebControls\Button_PopupWindow\Button_PopupWindow.cs" />
+    <Compile Include="WebControls\CalendarRange\CalendarRange.cs" />
+    <Compile Include="WebControls\CHTCalendarRange\CHTCalendarRange.cs" />
+    <Compile Include="WebControls\Captcha\Captcha.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebControls\Captcha\CaptchaImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebControls\Captcha\CaptchaImageHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebControls\CollapsiblePanel\CollapsiblePanel.cs" />
+    <Compile Include="WebControls\DecimalRange\DecimalRange.cs" />
+    <Compile Include="WebControls\DropDownList_Date\DropDownList_Date.cs" />
+    <Compile Include="WebControls\DropDownList_Multiple\DropDownList_Multiple.cs" />
+    <Compile Include="WebControls\DropDownList_Multiple\enumDbtype.cs" />
+    <Compile Include="WebControls\DropDownList_YearMonth\DropDownlist_YearMonth.cs" />
+    <Compile Include="WebControls\Email\Email.cs" />
+    <Compile Include="WebControls\Flash\Flash.cs" />
+    <Compile Include="WebControls\HtmlEditor\HtmlSourceInitializer.cs" />
+    <Compile Include="WebControls\HtmlEditor\Registrar.cs" />
+    <Compile Include="WebControls\HtmlEditor\HtmlEditor.cs" />
+    <Compile Include="WebControls\HtmlEditor\Security.cs" />
+    <Compile Include="WebControls\HtmlEditor\SourceActions.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\Identity\Identity.cs" />
+    <Compile Include="WebControls\ListBoxToListBox\ListBoxToListBox.cs" />
+    <Compile Include="WebControls\MediaPlayer\MediaPlayer.cs" />
+    <Compile Include="WebControls\Menu\Menu.cs" />
+    <Compile Include="WebControls\AjaxMultiUpload\AjaxMultiUpload.cs" />
+    <Compile Include="WebControls\NewDropDownList\NewDropDownList.cs" />
+    <Compile Include="WebControls\Number\Number.cs" />
+    <Compile Include="WebControls\NumberRange\NumberRange.cs" />
+    <Compile Include="WebControls\Number_Decimal\Number_Decimal.cs" />
+    <Compile Include="WebControls\PageMaker\PageMaker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebControls\PageMaker\PageMakerConverter.cs" />
+    <Compile Include="WebControls\PageMaker\PageSizeSelectEventArgs.cs" />
+    <Compile Include="WebControls\PdfViewer\PdfViewer.cs" />
+    <Compile Include="WebControls\CalendarRange\CHTPopupCalendar\CHTPopupCalendar.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Class\RegisterJavaScript.cs">
+    </Compile>
+    <Compile Include="Class\TextBoxBase.cs" />
+    <Compile Include="WebControls\ActiveX\ActiveXParam.cs" />
+    <Compile Include="WebControls\PopupCalendar\PopupCalendar.cs" />
+    <Compile Include="WebControls\PopWindow\PopupWin.cs" />
+    <Compile Include="WebControls\PopWindow\PopupWinAnchor.cs" />
+    <Compile Include="WebControls\ProgressBar\ProgressBar.cs" />
+    <Compile Include="WebControls\QRCode\QRCodeImageHandler.cs" />
+    <Compile Include="WebControls\QRCode\QRCode.cs" />
+    <Compile Include="WebControls\TabView\TabPage.cs" />
+    <Compile Include="WebControls\TabView\TabPagesCollection.cs" />
+    <Compile Include="WebControls\TabView\TabsView.cs" />
+    <Compile Include="WebControls\TabView\TabsViewDesigner.cs" />
+    <Compile Include="WebControls\TextBox_Normal\TextBox_Normal.cs" />
+    <Compile Include="WebControls\TextBox_PopupWindow\TextBox_PopupWindow.cs" />
+    <Compile Include="WebControls\ToolBar\CustomControlCollectionEditor.cs" />
+    <Compile Include="WebControls\ToolBar\ToolBar.cs" />
+    <Compile Include="Class\ValidationBase.cs" />
+    <Compile Include="Class\WebButtonBase.cs" />
+    <Compile Include="Class\WebScript.cs" />
+    <Compile Include="WebControls\NewGridView\NewGridView.cs" />
+    <Compile Include="WebControls\ToolBar\ToolBarButton.cs" />
+    <Compile Include="WebControls\ToolBar\ToolbarCollectionEditor.cs" />
+    <Compile Include="WebControls\ToolBar\ToolBarItem.cs" />
+    <Compile Include="WebControls\ToolBar\ToolBarLabel.cs" />
+    <Compile Include="WebControls\ToolBar\ToolBarTextBox.cs" />
+    <Compile Include="WebControls\AjaxUpload\FileFilterItem.cs" />
+    <Compile Include="WebControls\AjaxUpload\FileFilterItemCollectionEditor.cs" />
+    <Compile Include="WebControls\AjaxUpload\AjaxUpload.cs" />
+    <Compile Include="WebControls\AjaxUpload\AjaxUploadHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\MenuDesigner\CSS.ini" />
+    <None Include="Resources\MenuDesigner\Html.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UploadProgress\UploadProgress.txt" />
+    <EmbeddedResource Include="Resources\qrcode.bmp" />
+    <EmbeddedResource Include="Resources\ControlJS\Menu.js" />
+    <EmbeddedResource Include="Resources\close.gif" />
+    <EmbeddedResource Include="Resources\left1.gif" />
+    <EmbeddedResource Include="Resources\left2.gif" />
+    <EmbeddedResource Include="Resources\drop1.gif" />
+    <EmbeddedResource Include="Resources\drop2.gif" />
+    <EmbeddedResource Include="Resources\calendar1.htm" />
+    <EmbeddedResource Include="Resources\calendar2.htm" />
+    <EmbeddedResource Include="Resources\Control_PDF.bmp" />
+    <EmbeddedResource Include="Resources\barcode.gif" />
+    <EmbeddedResource Include="Resources\CollapsiblePanel.bmp" />
+    <EmbeddedResource Include="Resources\ControlJS\coordinates.js" />
+    <EmbeddedResource Include="Resources\ControlJS\core.js" />
+    <EmbeddedResource Include="Resources\ControlJS\css.js" />
+    <EmbeddedResource Include="Resources\ControlJS\drag.js" />
+    <EmbeddedResource Include="Resources\ControlJS\events.js" />
+    <EmbeddedResource Include="Resources\ControlJS\progressbar.js" />
+    <EmbeddedResource Include="Resources\Control_upload.bmp" />
+    <EmbeddedResource Include="Resources\barcode.bmp" />
+    <EmbeddedResource Include="Resources\HtmlEditor\EditorStyles\loading.css" />
+    <EmbeddedResource Include="Resources\HtmlEditor\EditorStyles\slider.css" />
+    <EmbeddedResource Include="Resources\HtmlEditor\EditorStyles\Style.css" />
+    <EmbeddedResource Include="Resources\HtmlEditor\EditorStyles\textEditor.css" />
+    <EmbeddedResource Include="Resources\HtmlEditor\js\Encoder.js" />
+    <EmbeddedResource Include="Resources\HtmlEditor\js\Initializer.js" />
+    <EmbeddedResource Include="Resources\HtmlEditor\js\jscolor.js" />
+    <EmbeddedResource Include="Resources\HtmlEditor\js\loading.js" />
+    <EmbeddedResource Include="Resources\HtmlEditor\js\RichText.js" />
+    <EmbeddedResource Include="Resources\HtmlEditor\js\slider.js" />
+    <EmbeddedResource Include="Resources\HtmlEditor\ColorPicker\colormap.gif" />
+    <EmbeddedResource Include="Resources\HtmlEditor\ColorPicker\palette.gif" />
+    <EmbeddedResource Include="Resources\HtmlEditor\ColorPicker\palette.jpg" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\1280657916_format-text-italic.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\bold.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\bullets.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\bullets_RTL.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\center.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\character_set.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\colormap.gif" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\colorPicker.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\copy.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\createtable.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\cut.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\directionLeft.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\editorMode.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\eraser.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\fontFamily.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\fontFamily2.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\fontFamily3.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\fontsize.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\fontStyle.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\fontStyle2.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\font_bold.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\format_justify_left.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\format_justify_right.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\format_text_strikethrough.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\highlight.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\highlighter_text.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\HorizontalLine.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\Htmlsource.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\indent.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\insertImage.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\insert_button.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\insert_checkbox.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\insert_combobox.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\insert_fileUpload.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\insert_image.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\insert_listBox.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\insert_password.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\insert_textarea.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\insert_textbox.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\italic.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\italic2.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\link2.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\link3.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\link_break.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\loadign.gif" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\ltr.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\ltr_direction.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\ltr_direction_on.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\numbering.gif" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\outdent.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\page_break.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\palette.gif" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\palette.jpg" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\paste.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\preview.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\printer.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\redo.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\resize_both.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\resize_horizontal.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\resize_vertical.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\rtl.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\rtl_direction.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\rtl_direction_on.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\save.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\save_as.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\select_all.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\strikethrough.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\subscript.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\superscript.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\swf.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\swfBackground.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\table.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\textColor.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\textColor2.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\text_align_center.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\text_bold.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\text_bold_on.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\text_italic.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\text_italic_on.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\text_list_numbers-RTL.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\text_list_numbers.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\text_strikethrough.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\ui_radio_button.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\underline.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\underline_on.png" />
+    <EmbeddedResource Include="Resources\HtmlEditor\RichTextBoxIcons\undo.png" />
+    <EmbeddedResource Include="Resources\Control_HtmlEditor.bmp" />
+    <EmbeddedResource Include="Resources\ControlJS\chtpopcalendar.js" />
+    <EmbeddedResource Include="Resources\ControlJS\AjaxUpload.js" />
+    <Content Include="DLL\AjaxPro.2.dll" />
+    <EmbeddedResource Include="Resources\Control_Button.bmp" />
+    <EmbeddedResource Include="Resources\Control_ActiveX.bmp" />
+    <Content Include="Resources\MenuCSS\Basic.css" />
+    <Content Include="Resources\MenuCSS\Basic_Bounce_Arrows.css" />
+    <Content Include="Resources\MenuCSS\Basic_Red_Highlight.css" />
+    <Content Include="Resources\MenuCSS\Blue_Tones.css" />
+    <Content Include="Resources\MenuCSS\Drop_Shadow.css" />
+    <Content Include="Resources\MenuCSS\Gradient_Background.css" />
+    <Content Include="Resources\MenuCSS\Gray_Scale.css" />
+    <Content Include="Resources\MenuCSS\Stretch_Buttons_Tan.css" />
+    <Content Include="Resources\MenuCSS\Thick_Borders.css" />
+    <Content Include="Resources\MenuCSS\Tree_Menu.css" />
+    <Content Include="Resources\MenuJS\Basic_Bounce_Arrows_Horizontal.js" />
+    <Content Include="Resources\MenuJS\Basic_Bounce_Arrows_Vertical.js" />
+    <Content Include="Resources\MenuJS\Basic_Horizontal.js" />
+    <Content Include="Resources\MenuJS\Basic_Red_Highlight_Horizontal.js" />
+    <Content Include="Resources\MenuJS\Basic_Red_Highlight_Vertical.js" />
+    <Content Include="Resources\MenuJS\Basic_Vertical.js" />
+    <Content Include="Resources\MenuJS\Blue_Tones_Horizontal.js" />
+    <Content Include="Resources\MenuJS\Blue_Tones_Vertical.js" />
+    <Content Include="Resources\MenuJS\Drop_Shadow_Horizontal.js" />
+    <Content Include="Resources\MenuJS\Drop_Shadow_Vertical.js" />
+    <Content Include="Resources\MenuJS\Gradient_Background_Horizontal.js" />
+    <Content Include="Resources\MenuJS\Gradient_Background_Vertical.js" />
+    <Content Include="Resources\MenuJS\Gray_Scale_Horizontal.js" />
+    <Content Include="Resources\MenuJS\Gray_Scale_Vertical.js" />
+    <Content Include="Resources\MenuJS\Stretch_Buttons_Tan_Horizontal.js" />
+    <Content Include="Resources\MenuJS\Stretch_Buttons_Tan_Vertical.js" />
+    <Content Include="Resources\MenuJS\Thick_Borders_Horizontal.js" />
+    <Content Include="Resources\MenuJS\Thick_Borders_Vertical.js" />
+    <Content Include="Resources\MenuJS\Tree_Menu_Vertical.js" />
+    <EmbeddedResource Include="Resources\progressbar.gif" />
+    <EmbeddedResource Include="Resources\refresh.png" />
+    <EmbeddedResource Include="Resources\refresh.jpg" />
+    <EmbeddedResource Include="Resources\PopupWin.bmp" />
+    <EmbeddedResource Include="Resources\PopupWinAnchor.bmp" />
+    <EmbeddedResource Include="Resources\right1.gif" />
+    <EmbeddedResource Include="Resources\right2.gif" />
+    <EmbeddedResource Include="Resources\calendar.gif" />
+    <EmbeddedResource Include="Resources\tree_main_plus.gif" />
+    <EmbeddedResource Include="Resources\tree_main_plus_active.gif" />
+    <EmbeddedResource Include="Resources\tree_main_plus_hover.gif" />
+    <EmbeddedResource Include="Resources\tree_sub_plus.gif" />
+    <EmbeddedResource Include="Resources\tree_sub_plus_active.gif" />
+    <EmbeddedResource Include="Resources\tree_sub_plus_hover.gif" />
+    <EmbeddedResource Include="Resources\sample1_main_arrow.gif" />
+    <EmbeddedResource Include="Resources\sample1_sub_arrow.gif" />
+    <EmbeddedResource Include="Resources\small_red_pointer.gif" />
+    <EmbeddedResource Include="Resources\arrows_0.gif" />
+    <EmbeddedResource Include="Resources\beige_rounded_bc.gif" />
+    <EmbeddedResource Include="Resources\beige_rounded_bl.gif" />
+    <EmbeddedResource Include="Resources\beige_rounded_br.gif" />
+    <EmbeddedResource Include="Resources\sample13_main_bg.gif" />
+    <EmbeddedResource Include="Resources\sample13_sub_expand_default.gif" />
+    <EmbeddedResource Include="Resources\sample13_sub_expand_on.gif" />
+    <EmbeddedResource Include="Resources\sample2_bg.gif" />
+    <EmbeddedResource Include="Resources\sample2_main_arrow.gif" />
+    <EmbeddedResource Include="Resources\sample2_sub_arrow.gif" />
+    <EmbeddedResource Include="Resources\light_arrow_down.gif" />
+    <EmbeddedResource Include="Resources\medium_purple_right.gif" />
+    <EmbeddedResource Include="Resources\arrow_sub.gif" />
+    <EmbeddedResource Include="Resources\firstPage.gif" />
+    <EmbeddedResource Include="Resources\firstPageDisabled.gif" />
+    <EmbeddedResource Include="Resources\icon-ffwd.gif" />
+    <EmbeddedResource Include="Resources\icon-frew.gif" />
+    <EmbeddedResource Include="Resources\icon-fwd.gif" />
+    <EmbeddedResource Include="Resources\icon-rew.gif" />
+    <EmbeddedResource Include="Resources\lastPage.gif" />
+    <EmbeddedResource Include="Resources\lastPageDisabled.gif" />
+    <EmbeddedResource Include="Resources\nextPage.gif" />
+    <EmbeddedResource Include="Resources\nextPageDisabled.gif" />
+    <EmbeddedResource Include="Resources\prevPage.gif" />
+    <EmbeddedResource Include="Resources\prevPageDisabled.gif" />
+    <EmbeddedResource Include="Resources\rowsDisplayed.gif" />
+    <EmbeddedResource Include="Resources\sample3_main_arrow.gif" />
+    <EmbeddedResource Include="Resources\sample3_sub_arrow.gif" />
+    <EmbeddedResource Include="Resources\scrollbutton_down.gif" />
+    <EmbeddedResource Include="Resources\separator.gif" />
+    <EmbeddedResource Include="Resources\SmallCalendar.gif" />
+    <EmbeddedResource Include="Resources\toolbarempty.gif" />
+    <EmbeddedResource Include="Resources\arrow_down.gif" />
+    <EmbeddedResource Include="Resources\arrow_right.gif" />
+    <EmbeddedResource Include="Resources\button_01.gif" />
+    <EmbeddedResource Include="Resources\button_02.gif" />
+    <EmbeddedResource Include="Resources\button_03.gif" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ControlJS\calendar.js">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ControlJS\popcalendar.js">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ControlJS\TabsView.js">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ControlJS\WebScript.js">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ControlJS\WebUIValidation.js">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CaptchaControl.bmp" />
+    <EmbeddedResource Include="Resources\Control_Flash.bmp" />
+    <EmbeddedResource Include="Resources\Control_MediaPlayer.bmp" />
+    <EmbeddedResource Include="Resources\Control_ToolBar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WebControls\bin\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

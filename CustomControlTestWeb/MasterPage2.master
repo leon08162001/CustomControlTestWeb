@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+<%@ Register Assembly="WebCustomControls" Namespace="APTemplate" TagPrefix="wcc" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+               <wcc:TabPage runat="server" Text="Tab Item1" PaddingTop="10px" PaddingBottom="10px"
+                    PaddingLeft="10px" PaddingRight="10px" ID="TabPage1" Style="padding-top: 10px;
+                    padding-bottom: 10px; padding-left: 10px; padding-right: 10px;" BorderColor="Red"
+                    BorderStyle="Solid" BorderWidth="1px">
+                    <wcc:Menu ID="Menu2" runat="server" ConnectionKey="Default" DataType="DataBase"
+                        ItemHoverBgColor="239, 239, 239" MainItemBgColor="255, 255, 255" MainItemForeColor="51, 51, 51"
+                        MenuItemWidth="145" MenuLevel="20" MenuPosition="Horizontal" MenuTableBaseName="Menu"
+                        MenuType="Stretch_Buttons_Tan" MenuWidth="450" SubItemBgColor="239, 239, 239"
+                        SubItemForeColor="85, 85, 85" Target="Frame" FrameName="win1" />                      
+                </wcc:TabPage>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <br />
+        <iframe name="win1" id="win1" width="1024" height="768" visible="true"></iframe> 
+    </div>
+    </form>
+</body>
+</html>

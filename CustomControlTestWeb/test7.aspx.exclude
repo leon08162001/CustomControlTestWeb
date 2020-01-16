@@ -1,0 +1,26 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="test7.aspx.cs" Inherits="test7" EnableViewState="false" %>
+
+<%@ Register Assembly="WebCustomControls" Namespace="APTemplate" TagPrefix="wcc" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>    
+    </div>
+    <wcc:PopupCalendar ID="PopupCalendar1" DateFormat="年" CalendarStyle="Classic" runat="server" />
+    <asp:Button ID="Button1" runat="server" Text="Button" />
+    <wcc:CalendarRange ID="CalendarRange1" runat="server" DateFormat="年" CalendarStyle="Classic" FirstDate="2011/08/01 11:11" SecondDate="2011/08/02 11:11" />
+    <wcc:NewGridView ID="NewGridView1" runat="server" AllowPaging="true" EmptyShowHeader="true" EnableViewState="false">
+    <%--<Columns>
+    <asp:BoundField DataField="type" HeaderText="Type" />
+    <asp:BoundField DataField="no" HeaderText="No" />
+    </Columns>--%>
+    </wcc:NewGridView>
+    <wcc:PageMaker ID="PageMaker1" runat="server" PagedControlID="NewGridView1" PageSize="10" />
+   </form>
+</body>
+</html>
