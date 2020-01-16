@@ -95,9 +95,9 @@ namespace APTemplate
             get
             {
                 if (TextBox1.Text == "")
-                    return Convert.ToDateTime("9999/12/01");
+                    return Convert.ToDateTime("9999/01/01");
                 else if(TextBox1.Text == "-1")
-                    return Convert.ToDateTime("9999/12/30");
+                    return Convert.ToDateTime("9999/01/31");
                 else
                     try
                     {
@@ -109,7 +109,7 @@ namespace APTemplate
                             return Convert.ToDateTime(TextBox1.Text);
                     }
                     catch (Exception ex)
-                    { return Convert.ToDateTime("9999/12/01"); }
+                    { return Convert.ToDateTime("9999/01/01"); }
             }
             set
             {
@@ -139,9 +139,9 @@ namespace APTemplate
             get
             {
                 if (TextBox2.Text == "")
-                    return Convert.ToDateTime("9999/12/01");
+                    return Convert.ToDateTime("9999/01/01");
                 else if (TextBox2.Text == "-1")
-                    return Convert.ToDateTime("9999/12/30");
+                    return Convert.ToDateTime("9999/01/31");
                 else
                     try
                     {
@@ -153,7 +153,7 @@ namespace APTemplate
                             return Convert.ToDateTime(TextBox2.Text);
                     }
                     catch (Exception ex)
-                    { return Convert.ToDateTime("9999/12/01"); }
+                    { return Convert.ToDateTime("9999/01/01"); }
             }
             set
             {
@@ -389,13 +389,13 @@ namespace APTemplate
             if (this.ReadOnly) { TextBox2.Attributes.Add("readonly", this.ReadOnly.ToString().ToLower()); }
             if (DateFormat == DateFormat.年月日)
             {
-                TextBox1.Text = FirstDate.ToString("yyyy/MM/dd") == "9999/12/01" ? "" : FirstDate.ToString("yyyy/MM/dd") == "9999/12/30" ? "-1" : FirstDate.ToString("yyyy/MM/dd");
-                TextBox2.Text = SecondDate.ToString("yyyy/MM/dd") == "9999/12/01" ? "" : SecondDate.ToString("yyyy/MM/dd") == "9999/12/30" ? "-1" : SecondDate.ToString("yyyy/MM/dd");
+                TextBox1.Text = FirstDate.ToString("yyyy/MM/dd") == "9999/01/01" ? "" : FirstDate.ToString("yyyy/MM/dd") == "9999/01/31" ? "-1" : FirstDate.ToString("yyyy/MM/dd");
+                TextBox2.Text = SecondDate.ToString("yyyy/MM/dd") == "9999/01/01" ? "" : SecondDate.ToString("yyyy/MM/dd") == "9999/01/31" ? "-1" : SecondDate.ToString("yyyy/MM/dd");
             }
             else if (this.DateFormat == DateFormat.年月)
             {
-                TextBox1.Text = FirstDate.ToString("yyyy/MM") == "9999/12" ? "" : FirstDate.ToString("yyyy/MM");
-                TextBox2.Text = SecondDate.ToString("yyyy/MM") == "9999/12" ? "" : SecondDate.ToString("yyyy/MM");
+                TextBox1.Text = FirstDate.ToString("yyyy/MM") == "9999/01" ? "" : FirstDate.ToString("yyyy/MM");
+                TextBox2.Text = SecondDate.ToString("yyyy/MM") == "9999/01" ? "" : SecondDate.ToString("yyyy/MM");
             }
             else if (this.DateFormat == DateFormat.年)
             {
@@ -404,18 +404,18 @@ namespace APTemplate
             }
             else if (this.DateFormat == DateFormat.年月日時分秒)
             {
-                TextBox1.Text = FirstDate.ToString("yyyy/MM/dd") == "9999/12/01" ? "" : FirstDate.ToString("yyyy/MM/dd") == "9999/12/30" ? "-1" : FirstDate.ToString("yyyy/MM/dd HH:mm:ss");
-                TextBox2.Text = SecondDate.ToString("yyyy/MM/dd") == "9999/12/01" ? "" : SecondDate.ToString("yyyy/MM/dd") == "9999/12/30" ? "-1" : SecondDate.ToString("yyyy/MM/dd HH:mm:ss");
+                TextBox1.Text = FirstDate.ToString("yyyy/MM/dd") == "9999/01/01" ? "" : FirstDate.ToString("yyyy/MM/dd") == "9999/01/31" ? "-1" : FirstDate.ToString("yyyy/MM/dd HH:mm:ss");
+                TextBox2.Text = SecondDate.ToString("yyyy/MM/dd") == "9999/01/01" ? "" : SecondDate.ToString("yyyy/MM/dd") == "9999/01/31" ? "-1" : SecondDate.ToString("yyyy/MM/dd HH:mm:ss");
             }
             else if (this.DateFormat == DateFormat.年月日時分)
             {
-                TextBox1.Text = FirstDate.ToString("yyyy/MM/dd") == "9999/12/01" ? "" : FirstDate.ToString("yyyy/MM/dd") == "9999/12/30" ? "-1" : FirstDate.ToString("yyyy/MM/dd HH:mm");
-                TextBox2.Text = SecondDate.ToString("yyyy/MM/dd") == "9999/12/01" ? "" : SecondDate.ToString("yyyy/MM/dd") == "9999/12/30" ? "-1" : SecondDate.ToString("yyyy/MM/dd HH:mm");
+                TextBox1.Text = FirstDate.ToString("yyyy/MM/dd") == "9999/01/01" ? "" : FirstDate.ToString("yyyy/MM/dd") == "9999/01/31" ? "-1" : FirstDate.ToString("yyyy/MM/dd HH:mm");
+                TextBox2.Text = SecondDate.ToString("yyyy/MM/dd") == "9999/01/01" ? "" : SecondDate.ToString("yyyy/MM/dd") == "9999/01/31" ? "-1" : SecondDate.ToString("yyyy/MM/dd HH:mm");
             }
             else if (this.DateFormat == DateFormat.年月日時)
             {
-                TextBox1.Text = FirstDate.ToString("yyyy/MM/dd") == "9999/12/01" ? "" : FirstDate.ToString("yyyy/MM/dd") == "9999/12/30" ? "-1" : FirstDate.ToString("yyyy/MM/dd HH");
-                TextBox2.Text = SecondDate.ToString("yyyy/MM/dd") == "9999/12/01" ? "" : SecondDate.ToString("yyyy/MM/dd") == "9999/12/30" ? "-1" : SecondDate.ToString("yyyy/MM/dd HH");
+                TextBox1.Text = FirstDate.ToString("yyyy/MM/dd") == "9999/01/01" ? "" : FirstDate.ToString("yyyy/MM/dd") == "9999/01/31" ? "-1" : FirstDate.ToString("yyyy/MM/dd HH");
+                TextBox2.Text = SecondDate.ToString("yyyy/MM/dd") == "9999/01/01" ? "" : SecondDate.ToString("yyyy/MM/dd") == "9999/01/31" ? "-1" : SecondDate.ToString("yyyy/MM/dd HH");
             }
             TextBox1.ForeColor = this.TextForeColor;
             TextBox1.BackColor = this.TextBackColor;
