@@ -188,40 +188,46 @@ function checkID(idStr) {
 function AlertValidation() {
   var i;
   var Vals = event.srcElement.Validators;
-  for (i = 0; i < Vals.length; i++) {
-    ValidatorValidate(Vals[i]);
-    if (Vals[i].isvalid == false) {
-      if (Vals[i].errormessage != undefined) {
-        window.alert(Vals[i].errormessage);
-        break;
+  if (Vals != null) {
+      for (i = 0; i < Vals.length; i++) {
+          ValidatorValidate(Vals[i]);
+          if (Vals[i].isvalid == false) {
+              if (Vals[i].errormessage != undefined) {
+                  window.alert(Vals[i].errormessage);
+                  break;
+              }
+          }
       }
-    }
+      ValidatorUpdateIsValid();
+      Page_BlockSubmit = !Page_IsValid;
+      return Page_IsValid;
   }
-  ValidatorUpdateIsValid();
-  Page_BlockSubmit = !Page_IsValid;
-  return Page_IsValid;
 }
 
 function UpdateErrorMessage() {
   var i;
   var Vals = event.srcElement.Validators;
-  for (i = 0; i < Vals.length; i++) {
-    ValidatorValidate(Vals[i]);
+  if (Vals != null) {
+      for (i = 0; i < Vals.length; i++) {
+          ValidatorValidate(Vals[i]);
+      }
+      ValidatorUpdateIsValid();
+      Page_BlockSubmit = !Page_IsValid;
+      return Page_IsValid;
   }
-  ValidatorUpdateIsValid();
-  Page_BlockSubmit = !Page_IsValid;
-  return Page_IsValid;
 }
 
 function DateValidate(obj) {
   var i;
   var Vals = obj.Validators;
-  for (i = 0; i < Vals.length; i++) {
-    ValidatorValidate(Vals[i]);
+  if (Vals != null) {
+      for (i = 0; i < Vals.length; i++) {
+          ValidatorValidate(Vals[i]);
+      }
+      ValidatorUpdateIsValid();
+      Page_BlockSubmit = !Page_IsValid;
+      return Page_IsValid;
   }
-  ValidatorUpdateIsValid();
-  Page_BlockSubmit = !Page_IsValid;
-  return Page_IsValid;
 }
 
 function isTriDecimal(value, DecimalLen) {
