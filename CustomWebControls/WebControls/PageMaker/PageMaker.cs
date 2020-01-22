@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections;
-using System.Data;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Reflection;
-using System.ComponentModel;
+using System.Runtime.Caching;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace APTemplate
 {
@@ -231,7 +228,7 @@ namespace APTemplate
                 _PagedControl = Parent.FindControl(this.PagedControlID);
                 Page.RegisterRequiresControlState(this);
                 if (!Page.IsPostBack)
-                {
+                {              
                     DefaultPageSize = PageSize;
                     PageSize = DefaultPageSize;
                 }
@@ -636,7 +633,7 @@ namespace APTemplate
         [DefaultValue(""),
          Category("自訂"),
          Description("設定分頁的資料來源(須與gridview,listview,datalist等控制項的資料來源相同)。")]
-        protected Object DataSource
+        public Object DataSource
         {
             get
             {
@@ -688,7 +685,9 @@ namespace APTemplate
             _PageIndex = (int)allStates[1];
             PageTo.Text = (string)allStates[2];
             _DefaultPageSize = (int)allStates[3];
-            mDataSource= (object)allStates[4];
+            mDataSource = MemoryCache.Default["DataSource"];
+            //mDataSource = HttpContext.Current.Session["DataSource"];
+            //mDataSource = (object)allStates[4];
         }
 
         /// <summary>
@@ -701,7 +700,11 @@ namespace APTemplate
             allStates[1] = _PageIndex;
             allStates[2] = PageTo.Text;
             allStates[3] = _DefaultPageSize;
-            allStates[4] = mDataSource;
+            var policy = new CacheItemPolicy();
+            policy.AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(10);
+            if (mDataSource != null) MemoryCache.Default.Set("DataSource", mDataSource, policy);
+            //HttpContext.Current.Session["DataSource"] = mDataSource;
+            //allStates[4] = mDataSource;
             return allStates;
         }
 
