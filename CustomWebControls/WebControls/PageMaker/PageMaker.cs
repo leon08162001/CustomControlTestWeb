@@ -228,7 +228,8 @@ namespace APTemplate
                 _PagedControl = Parent.FindControl(this.PagedControlID);
                 Page.RegisterRequiresControlState(this);
                 if (!Page.IsPostBack)
-                {              
+                {
+                    MemoryCache.Default.Remove("DataSource");
                     DefaultPageSize = PageSize;
                     PageSize = DefaultPageSize;
                 }
