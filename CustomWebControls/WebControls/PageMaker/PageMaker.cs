@@ -248,6 +248,11 @@ namespace APTemplate
                 PageIndex = 0;
                 Paging();
             }
+            else
+            {
+                GetPageCount();
+                Paging();
+            }
         }
 
         protected override void CreateChildControls()
@@ -460,6 +465,7 @@ namespace APTemplate
             PageMaker PM = GetSyncPageMaker();
             PageSize = (int)Convert.ToInt32(DropDownListRecord.SelectedValue);
             PageCount = PageCount == 0 ? GetPageCount() : PageCount;
+            PageTo.Text = "1";
             PageIndex = 0;
             Paging();
             if (PM != null)
