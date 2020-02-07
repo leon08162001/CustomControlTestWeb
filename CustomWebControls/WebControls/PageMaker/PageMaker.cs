@@ -67,7 +67,6 @@ namespace APTemplate
         private Position _Align;
         private bool IsTriggeredFlag = false;
         private string _SyncPageMakerID = "";
-        private int _SwitchVal = -1;
 
         protected Label PageInfo = new Label();
         protected ImageButton ImageButtonFirstPage = new ImageButton();
@@ -294,14 +293,9 @@ namespace APTemplate
             int result;
             this.Context.Items["DataSource"] = this.Context.Items["DataSource"] == null ? _PagedControl.GetType().GetProperty("DataSource").GetValue(_PagedControl,null) : this.Context.Items["DataSource"];
             this.DataSource = this.Context.Items["DataSource"];
-            if (PageCount == 0 || PageCount == -1)
-            {
-                PageCount = GetPageCount();
-                if (_SwitchVal == 1)
-                    PageIndex = PageCount > 0 ? PageCount - 1 : 0;
-                else if (_SwitchVal == 2)
-                    PageIndex = PageTo.Text != "" && Int32.TryParse(PageTo.Text, out result) && result > 0 && result <= PageCount ? Int32.Parse(PageTo.Text) - 1 : PageIndex;
-            }
+            PageCount = 0;
+            this.PageIndex = 0;
+            PageCount = GetPageCount();
             RePaging(this.PageIndex);
             PageMaker PM = GetSyncPageMaker();
             if (PM != null)
@@ -420,11 +414,6 @@ namespace APTemplate
             PageSize = (int)Convert.ToInt32(DropDownListRecord.SelectedValue);
             PageCount = PageCount == 0 ? GetPageCount() : PageCount;
             PageIndex = PageCount > 0 ? PageCount - 1 : 0;
-            if (PageCount == -1)
-            {
-                _SwitchVal = 1;
-                return;
-            }
             Paging();
             if (PM != null)
             {
@@ -443,11 +432,6 @@ namespace APTemplate
             PageSize = (int)Convert.ToInt32(DropDownListRecord.SelectedValue);
             PageCount = PageCount == 0 ? GetPageCount() : PageCount;
             PageIndex = PageTo.Text != "" && Int32.TryParse(PageTo.Text, out result) && result > 0 && result <= PageCount ? Int32.Parse(PageTo.Text) - 1 : PageIndex;
-            if (PageCount == -1)
-            {
-                _SwitchVal = 2;
-                return;
-            }
             Paging();
             if (PM != null)
             {
@@ -612,6 +596,7 @@ namespace APTemplate
         /// </summary>
         protected int GetPageCount()
         {
+
             if (this.DataSource == null)
             {
                 SourceTable = null;
