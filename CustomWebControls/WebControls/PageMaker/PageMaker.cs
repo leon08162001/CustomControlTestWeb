@@ -249,13 +249,13 @@ namespace APTemplate
             }
             else
             {
-                int pageTo;
-                if (Context.Request.Form[PageTo.UniqueID] != null && Int32.TryParse(Context.Request.Form[PageTo.UniqueID].ToString(), out pageTo)
-                    && pageTo == PageIndex + 1)
-                {
+                //int pageTo;
+                //if (Context.Request.Form[PageTo.UniqueID] != null && Int32.TryParse(Context.Request.Form[PageTo.UniqueID].ToString(), out pageTo)
+                //    && pageTo == PageIndex + 1)
+                //{
                     GetPageCount();
                     Paging();
-                }
+                //}
             }
         }
 
