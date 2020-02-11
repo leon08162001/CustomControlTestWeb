@@ -249,8 +249,13 @@ namespace APTemplate
             }
             else
             {
-                GetPageCount();
-                Paging();
+                int pageTo;
+                if (Context.Request.Form[PageTo.UniqueID] != null && Int32.TryParse(Context.Request.Form[PageTo.UniqueID].ToString(), out pageTo)
+                    && pageTo == PageIndex + 1)
+                {
+                    GetPageCount();
+                    Paging();
+                }
             }
         }
 
@@ -675,6 +680,7 @@ namespace APTemplate
             object[] allStates = (object[])savedState;
             _PageSize = (int)allStates[0];
             _PageIndex = (int)allStates[1];
+
             PageTo.Text = (string)allStates[2];
             _DefaultPageSize = (int)allStates[3];
             mDataSource = MemoryCache.Default["DataSource"];
