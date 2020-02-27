@@ -228,7 +228,8 @@ namespace APTemplate
                 Page.RegisterRequiresControlState(this);
                 if (!Page.IsPostBack)
                 {
-                    MemoryCache.Default.Remove("DataSource");
+
+                    MemoryCache.Default.Remove(Context.Session.SessionID + "DataSource");
                     DefaultPageSize = PageSize;
                     PageSize = DefaultPageSize;
                 }
@@ -249,8 +250,15 @@ namespace APTemplate
             }
             else
             {
-                GetPageCount();
-                Paging();
+                if (Context.Request.Params["__EVENTTARGET"] != null && !Context.Request.Params["__EVENTTARGET"].ToString().Equals(""))
+                {
+                    string eventObj = Context.Request.Params["__EVENTTARGET"].ToString();
+                    if (eventObj.IndexOf("PageTo") != -1)
+                    {
+                        GetPageCount();
+                        Paging();
+                    }
+                }
             }
         }
 
@@ -678,7 +686,7 @@ namespace APTemplate
 
             PageTo.Text = (string)allStates[2];
             _DefaultPageSize = (int)allStates[3];
-            mDataSource = MemoryCache.Default["DataSource"];
+            mDataSource = MemoryCache.Default[Context.Session.SessionID + "DataSource"];
             //mDataSource = HttpContext.Current.Session["DataSource"];
             //mDataSource = (object)allStates[4];
         }
@@ -695,7 +703,7 @@ namespace APTemplate
             allStates[3] = _DefaultPageSize;
             var policy = new CacheItemPolicy();
             policy.AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(10);
-            if (mDataSource != null) MemoryCache.Default.Set("DataSource", mDataSource, policy);
+            if (mDataSource != null) MemoryCache.Default.Set(Context.Session.SessionID + "DataSource", mDataSource, policy);
             //HttpContext.Current.Session["DataSource"] = mDataSource;
             //allStates[4] = mDataSource;
             return allStates;
