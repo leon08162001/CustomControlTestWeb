@@ -61,12 +61,24 @@ namespace APTemplate
             try
             {
                 StringBuilder sb = new StringBuilder();
-                sb.Append("<iframe src=" + FilePath.ToString() + " ");
+                if (FilePath == null)
+                {
+                    sb.Append("<iframe src='' ");
+                }
+                else
+                {
+                    sb.Append("<iframe src=" + FilePath.ToString() + " ");
+                }
                 sb.Append("width=" + Width.ToString() + " height=" + Height.ToString() + ">");
-                sb.Append("<a href=" + FilePath.ToString() + "</a>");
-                sb.Append("<a href=" + FilePath.ToString() + "</a> ");
+                if (FilePath == null)
+                {
+                    sb.Append("<a href='#'</a>");
+                }
+                else
+                {
+                    sb.Append("<a href=" + FilePath.ToString() + "</a>");
+                }
                 sb.Append("</iframe>");
-
                 writer.RenderBeginTag(HtmlTextWriterTag.Div);
                 writer.Write(sb.ToString());
                 writer.RenderEndTag();

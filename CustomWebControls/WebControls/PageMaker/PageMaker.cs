@@ -228,8 +228,10 @@ namespace APTemplate
                 Page.RegisterRequiresControlState(this);
                 if (!Page.IsPostBack)
                 {
-
-                    MemoryCache.Default.Remove(Context.Session.SessionID + "DataSource");
+                    if (!this.DesignMode)
+                    {
+                        MemoryCache.Default.Remove(Context.Session.SessionID + "DataSource");
+                    }
                     DefaultPageSize = PageSize;
                     PageSize = DefaultPageSize;
                 }
@@ -302,7 +304,7 @@ namespace APTemplate
             this.Context.Items["DataSource"] = this.Context.Items["DataSource"] == null ? _PagedControl.GetType().GetProperty("DataSource").GetValue(_PagedControl,null) : this.Context.Items["DataSource"];
             this.DataSource = this.Context.Items["DataSource"];
             PageCount = 0;
-            this.PageIndex = 0;
+            //this.PageIndex = 0;
             PageCount = GetPageCount();
             RePaging(this.PageIndex);
             PageMaker PM = GetSyncPageMaker();

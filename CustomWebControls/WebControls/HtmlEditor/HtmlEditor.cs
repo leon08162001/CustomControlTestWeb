@@ -80,7 +80,10 @@ namespace APTemplate
             string Csslink = "<link rel='stylesheet' type='text/css' href='" + Page.ClientScript.GetWebResourceUrl(this.GetType(), "APTemplate.Resources.HtmlEditor.EditorStyles.Style.css") + "' />";
             string RichTextStyle = "<link rel='stylesheet' type='text/css' href='" + Page.ClientScript.GetWebResourceUrl(this.GetType(), "APTemplate.Resources.HtmlEditor.EditorStyles.textEditor.css") + "' />";
             string SliderStyle = "<link rel='stylesheet' type='text/css' href='" + Page.ClientScript.GetWebResourceUrl(this.GetType(), "APTemplate.Resources.HtmlEditor.EditorStyles.slider.css") + "' />";
-            this.Page.Header.InnerHtml = Title + Csslink + RichTextStyle + SliderStyle;
+            if (!this.DesignMode)
+            {
+                this.Page.Header.InnerHtml = Title + Csslink + RichTextStyle + SliderStyle;
+            }
         }
 
         protected override void RenderContents(HtmlTextWriter output)

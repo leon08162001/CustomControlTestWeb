@@ -339,7 +339,10 @@ namespace APTemplate
             //added in 2013/10/26
             if (!this.Page.IsPostBack)
             {
-                HttpContext.Current.Session.Remove(this.UniqueID);
+                if (!this.DesignMode)
+                {
+                    HttpContext.Current.Session.Remove(this.UniqueID);
+                }
             }
         }
 

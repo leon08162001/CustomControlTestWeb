@@ -329,8 +329,8 @@ namespace APTemplate
                             }
 
                             Image.Attributes["onmouseover"] = Btn.OverImageUrl != "" ?
-                            "this.style.cursor='hand';this.style.borderStyle='inset';document.getElementById('" + this.ClientID + "_" + Image.ClientID + "').src='" + base.ResolveClientUrl(Btn.OverImageUrl) + "';"
-                            : "this.style.cursor='hand';this.style.borderStyle='inset';";
+                            "this.style.cursor='pointer';this.style.borderStyle='inset';document.getElementById('" + this.ClientID + "_" + Image.ClientID + "').src='" + base.ResolveClientUrl(Btn.OverImageUrl) + "';"
+                            : "this.style.cursor='pointer';this.style.borderStyle='inset';";
                             if (ActiveBtnID != Image.ID)
                             {
                                 Image.Attributes["onmouseout"] = Btn.ImageUrl != "" ?
