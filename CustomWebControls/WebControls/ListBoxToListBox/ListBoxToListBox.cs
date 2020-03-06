@@ -441,7 +441,7 @@ namespace APTemplate
             ImageButton1.ImageUrl = this.Page != null ? this.Page.ClientScript.GetWebResourceUrl(this.GetType(), "APTemplate.Resources.icon-fwd.gif") : "";
             ImageButton1.Width = Unit.Pixel(12);
             ImageButton1.Height = Unit.Pixel(12);
-            ImageButton1.Attributes["onmouseover"] += "this.style.cursor='hand';";
+            ImageButton1.Attributes["onmouseover"] += "this.style.cursor='pointer';";
             ImageButton1.Attributes["onmouseout"] += "this.style.cursor='default';";
 
             //ImageButton2
@@ -449,7 +449,7 @@ namespace APTemplate
             ImageButton2.ImageUrl = this.Page != null ? this.Page.ClientScript.GetWebResourceUrl(this.GetType(), "APTemplate.Resources.icon-rew.gif") : "";
             ImageButton2.Width = Unit.Pixel(12);
             ImageButton2.Height = Unit.Pixel(12);
-            ImageButton2.Attributes["onmouseover"] += "this.style.cursor='hand';";
+            ImageButton2.Attributes["onmouseover"] += "this.style.cursor='pointer';";
             ImageButton2.Attributes["onmouseout"] += "this.style.cursor='default';";
 
             //ImageButton3
@@ -457,7 +457,7 @@ namespace APTemplate
             ImageButton3.ImageUrl = this.Page != null ? this.Page.ClientScript.GetWebResourceUrl(this.GetType(), "APTemplate.Resources.icon-ffwd.gif") : "";
             ImageButton3.Width = Unit.Pixel(12);
             ImageButton3.Height = Unit.Pixel(12);
-            ImageButton3.Attributes["onmouseover"] += "this.style.cursor='hand';";
+            ImageButton3.Attributes["onmouseover"] += "this.style.cursor='pointer';";
             ImageButton3.Attributes["onmouseout"] += "this.style.cursor='default';";
 
             //ImageButton4
@@ -465,7 +465,7 @@ namespace APTemplate
             ImageButton4.ImageUrl = this.Page != null ? this.Page.ClientScript.GetWebResourceUrl(this.GetType(), "APTemplate.Resources.icon-frew.gif") : "";
             ImageButton4.Width = Unit.Pixel(12);
             ImageButton4.Height = Unit.Pixel(12);
-            ImageButton4.Attributes["onmouseover"] += "this.style.cursor='hand';";
+            ImageButton4.Attributes["onmouseover"] += "this.style.cursor='pointer';";
             ImageButton4.Attributes["onmouseout"] += "this.style.cursor='default';";
 
             TableCell1.HorizontalAlign = HorizontalAlign.Center;
