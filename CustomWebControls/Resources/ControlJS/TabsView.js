@@ -53,20 +53,20 @@ function OnTabClick(btn, index, tabControlId, hfId, isUseBgImage, unSelectedLeft
         {
 
           if (document.getElementById(btnId + 'l') != null)
-          { document.getElementById(btnId + 'l').style.backgroundColor = seletedBackColor; }
-          document.getElementById(btnId).style.backgroundColor = seletedBackColor;
+          { document.getElementById(btnId + 'l').style.backgroundColor = "#" + seletedBackColor; }
+          document.getElementById(btnId).style.backgroundColor = "#" + seletedBackColor;
           if (document.getElementById(btnId + 'r') != null)
-          { document.getElementById(btnId + 'r').style.backgroundColor = seletedBackColor; }
+          { document.getElementById(btnId + 'r').style.backgroundColor = "#" + seletedBackColor; }
           document.getElementById(contentId).style.display = "block";
           document.getElementById(hfId).value = i; //將隱藏欄位值設為目前所選Tab標籤的索引.  
         }
         else 
         {
           if (document.getElementById(btnId + 'l') != null)
-          { document.getElementById(btnId + 'l').style.backgroundColor = unSelectedBackColor; }
-          document.getElementById(btnId).style.backgroundColor = unSelectedBackColor;
+          { document.getElementById(btnId + 'l').style.backgroundColor = "#" + unSelectedBackColor; }
+          document.getElementById(btnId).style.backgroundColor = "#" + unSelectedBackColor;
           if (document.getElementById(btnId + 'r') != null)
-          { document.getElementById(btnId + 'r').style.backgroundColor = unSelectedBackColor; }
+          { document.getElementById(btnId + 'r').style.backgroundColor = "#" + unSelectedBackColor; }
           document.getElementById(contentId).style.display = "none";
         }
         break;
