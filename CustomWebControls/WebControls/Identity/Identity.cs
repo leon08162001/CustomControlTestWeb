@@ -149,7 +149,7 @@ namespace APTemplate
                 valid.ControlToValidate = TextBox1.ID;
                 valid.IsValid = true;
                 valid.Display = ValidatorDisplay.Dynamic;
-                valid.ClientValidationFunction = "Identity_ClientValidate";
+                valid.ClientValidationFunction = "Identity_ClientValidate_" + this.ClientID;
                 valid.Font.Size = FontUnit.Small;
                 valid.Attributes["style"] += "display:none;";
                 valid.ErrorMessage = Title + "=> 身份證字號格式不正確!";
@@ -170,7 +170,7 @@ namespace APTemplate
             if (!Page.IsStartupScriptRegistered(TextBox1.ClientID + "_ValidScript"))
             {
                 string script = "<script language=javascript> \n" +
-                  "\t function Identity_ClientValidate(source, arguments) { \n" +
+                  "\t function Identity_ClientValidate_" +this.ClientID + "(source, arguments) { \n" +
                   "\t if(checkEng(arguments.Value.substr(0,1))) { \n" +
                   "\t\t document.getElementById('" + TextBox1.ClientID + "').value = arguments.Value.substr(0,1).toUpperCase() + arguments.Value.substr(1); \n" +
                   "\t\t arguments.Value = document.getElementById('" + TextBox1.ClientID + "').value; \n" +

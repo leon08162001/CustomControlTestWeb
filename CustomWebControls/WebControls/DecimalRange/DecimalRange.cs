@@ -552,10 +552,13 @@ namespace APTemplate
                     {
                         if (Convert.ToBoolean(Ctl.GetType().GetProperty("CausesValidation").GetValue(Ctl, null)) == true)
                         {
-                            ((WebControl)Ctl).Attributes["onclick"] += ((WebControl)Ctl).Attributes["onclick"] == null || ((WebControl)Ctl).Attributes["onclick"].IndexOf("if (Page_ClientValidate('" + this.ValidationGroup + "')==false){return false;}else{CarryProcess();};") == -1 ? "if (Page_ClientValidate('" + this.ValidationGroup + "')==false){return false;}else{CarryProcess();};" : "";
+                            if (Convert.ToBoolean(Ctl.GetType().GetProperty("CausesValidation").GetValue(Ctl, null)) == true && ((IButtonControl)Ctl).ValidationGroup == this.ValidationGroup)
+                            {
+                                ((WebControl)Ctl).Attributes["onclick"] += ((WebControl)Ctl).Attributes["onclick"] == null || ((WebControl)Ctl).Attributes["onclick"].IndexOf("if (Page_ClientValidate('" + this.ValidationGroup + "')==false){return false;}else{CarryProcess();};") == -1 ? "if (Page_ClientValidate('" + this.ValidationGroup + "')==false){return false;}else{CarryProcess();};" : "";
+                            }
                         }
                     }
-                    if (Ctl.GetType() == typeof(HtmlInputSubmit))
+                    if (Ctl.GetType() == typeof(HtmlInputSubmit) && ((HtmlInputSubmit)Ctl).ValidationGroup == this.ValidationGroup)
                     {
                         ((HtmlControl)Ctl).Attributes["onclick"] += ((HtmlControl)Ctl).Attributes["onclick"] == null || ((HtmlControl)Ctl).Attributes["onclick"].IndexOf("if (Page_ClientValidate('" + this.ValidationGroup + "')==false){return false;}else{CarryProcess();};") == -1 ? "if (Page_ClientValidate('" + this.ValidationGroup + "')==false){return false;}else{CarryProcess();};" : "";
                     }
