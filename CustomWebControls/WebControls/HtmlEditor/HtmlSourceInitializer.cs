@@ -37,13 +37,13 @@ namespace APTemplate
             //Page page = new Page();
             StringBuilder HtmlSource = new StringBuilder();
             //HtmlSource.Append("<div id=\"loadingZone\" style=\"margin-left:300px;margin-top:100px\"><div style=\"font-family:tahoma;color:#B9B9B9\" id=\"loadingSms\">Loading...</div><br class=\"clear\" /><div id=\"loadingBar\"><div id=\"loaderParent\" style=\"width:300px;border-color:#DFE0DE;border:1px;border-style:groove\"><div style=\"width:10px;height:3px;background-color:#ADADAD\" id=\"progressBar\"></div></div></div><div id=\"infoLoading\"></div></div>");
-            HtmlSource.Append("<center id=\"centerElement\" style=\"display:none\">");
+            HtmlSource.Append("<div id=\"centerElement\" style=\"display:none\">");
             HtmlSource.Append("<table>");
             HtmlSource.Append("<table cellpadding=\"0px\" cellspacing=\"0px\">");
             HtmlSource.Append("<tr>");
-            HtmlSource.Append("<td align=\"left\" valign=\"bottom\" style=\"width:100px\"></td>");
+            HtmlSource.Append("<td align=\"left\" valign=\"bottom\"></td>");
             HtmlSource.Append("<td align=\"left\" valign=\"bottom\">");
-            HtmlSource.Append("<div id=\"textToolsContainer\" style='width: 600px; text-align: left; margin-bottom: 10px'>");
+            HtmlSource.Append("<div id=\"textToolsContainer\" style='text-align: left; margin-bottom: 10px'>");
             HtmlSource.Append("<table cellpadding=\"0px\" cellspacing=\"1px\">");
             HtmlSource.Append("<tr>");
             HtmlSource.Append("<td>");
