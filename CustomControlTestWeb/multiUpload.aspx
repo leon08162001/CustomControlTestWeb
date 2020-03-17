@@ -26,7 +26,7 @@
                     <asp:FileUpload ID="fileUpload" runat="server" Height="22px" />
                 </td>
                 <td>
-                    <input id="btn_upload" type="button" value="上傳" onclick="doUpload();" />
+                    <input id="btn_upload" type="button" value="上傳" onclick="if (document.getElementById('fileUpload').value != '') { doUpload(); }" />
                     <asp:Button ID="btn_serverUpload" runat="server" OnClick="UploadData" Style="display: none;"
                         Text="上傳" />
                 </td>

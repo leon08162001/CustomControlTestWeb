@@ -24,13 +24,17 @@ public partial class multiUpload : UploadFile
                 stic_ContentLength = this.fileUpload.PostedFile.ContentLength;
                 long ContentLength = stic_ContentLength;
                 stic_fileName = Path.GetFileName(this.fileUpload.PostedFile.FileName);
-                stic_IsStartUpload = true;
+                //stic_IsStartUpload = false;
                 string fileName = stic_fileName;
                 if (this.fileUpload.PostedFile != null && ContentLength > 0)
                 {
                     //build the local path where upload all the files
                     int UploadedLength = 0;
                     string path = this.Server.MapPath(@"Uploads");
+                    if(!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
 
                     //set the buffer size to something larger.
                     //the smaller the buffer the longer it will take to download, 
@@ -50,6 +54,7 @@ public partial class multiUpload : UploadFile
                             fs.Write(buffer, 0, bytes);
                             //Update the number the webservice is polling on to the session
                             UploadedLength += bytes;
+                            //stic_IsStartUpload = true;
                         }
                     }
                 }

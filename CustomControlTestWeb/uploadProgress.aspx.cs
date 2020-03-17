@@ -18,35 +18,26 @@ public partial class uploadProgress : UploadFile
     /// Long running background operation
     /// </summary>
     [AjaxMethod()]
-    public bool ProgressBar1_DoWork()
+    public bool DoWork()
     {
-        while (stic_IsStartUpload == false)
+        System.Threading.Thread.Sleep(100);
+        string path = Server.MapPath(@"~\Uploads\");
+        string fileName = stic_fileName;
+        FileInfo FileInfo = new FileInfo(Path.Combine(path, fileName));
+        while(!FileInfo.Exists)
         {
-            System.Threading.Thread.Sleep(1);
+            FileInfo = new FileInfo(Path.Combine(path, fileName));
         }
-        stic_IsStartUpload = false;
         bool result = false;
         try
         {
-            string path = @"F:\自訂控制項\WebCustomControlsTestWeb\Uploads\";
-            string fileName = stic_fileName;
             long ContentLength = stic_ContentLength;
-            if (fileName != "")
+            while (FileInfo.Length < ContentLength)
             {
-
-                FileInfo FileInfo = new FileInfo(Path.Combine(path, fileName));
-                while (FileInfo.Length < ContentLength)
-                {
-                    System.Threading.Thread.Sleep(1);
-                    FileInfo = new FileInfo(Path.Combine(path, fileName));
-                }
-                result = true;
+                System.Threading.Thread.Sleep(1);
+                FileInfo = new FileInfo(Path.Combine(path, fileName));
             }
-            else if (fileName == "")
-            {
-                result = false;
-                throw new Exception("尚未指定入上傳檔案!");
-            }
+            result = true;
         }
         catch (Exception ex)
         {

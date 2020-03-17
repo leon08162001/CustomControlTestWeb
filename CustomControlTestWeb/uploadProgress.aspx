@@ -26,7 +26,7 @@
             IsShowTrueText="false" TrueText="上傳完成!" Style="top: 0px; left: 0px" ImageUrl="~/images/progressbar13.gif"
             ProgressType="Image" IsNeedForPercentage="false" AjaxServerClass="uploadProgress" IsNeedForNewWindow="false"
             Font-Names="微軟正黑體" ProgressTimeSpan="1" 
-            ProgressTextDirection="horizontal" />
+            ProgressTextDirection="horizontal" AjaxServerMethod="DoWork" />
     <asp:Button ID="btn_progress" runat="server" Text="進度" OnClientClick="doProgressWork();return false;" style="display:none;" />
     </div>
     </form>
