@@ -9,14 +9,14 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <wcc:AjaxMultiUpload ID="MultiUpload1" runat="server" UploadNmbers="2" 
-            IsWithProgress="False" IsWithProgressPercent="True"
+        <wcc:AjaxMultiUpload ID="MultiUpload1" runat="server" UploadNmbers="3" 
+            IsWithProgress="True" IsWithProgressPercent="True"
             UploadDir='<%$ AppSettings:UploadFolder %>' ProgressImageUrl="~/images/progressbar13.gif"
             Font-Names="微軟正黑體" Font-Size="9" ProgressTextFont="微軟正黑體, 9pt, style=Underline"
             ProgressText="上傳中..." ProgressPercentPageUrl="~/Demo/UploadProgress.aspx" ScriptMethodNameForProgressPercent="doProgressWork"
             IsShowUploadButton="False" NofileUploadMessage="請選擇上傳檔案!" 
-            IsUseVirtualPath="False" IsTriggerUploadFilesFinishedEvent="True" 
-            onmultiuploadfilesfinished="MultiUpload1_MultiUploadFilesFinished">
+            IsUseVirtualPath="True" IsTriggerUploadFilesFinishedEvent="True" 
+            onmultiuploadfilesfinished="MultiUpload1_MultiUploadFilesFinished" IsAllowMultiFiles="True">
             <FileFilterItems>
                 <wcc:FileFilterItem Value="*.*" />
             </FileFilterItems>
