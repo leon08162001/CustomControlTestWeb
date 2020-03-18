@@ -29,10 +29,11 @@ namespace APTemplate
         protected List<FileFilterItem> _Items = new List<FileFilterItem>();
         protected bool _IsWithProgressPercent = false;
         protected string _ProgressPercentPageUrl = "";
-        protected string _ScriptMethodNameForProgressPercent = "";
+        protected string _ScriptMethodNameForProgressPercent = "doProgressWork";
         protected bool _IsNeedConfirmMessage = false;
         protected string _ConfirmMessage = "";
         protected bool _IsShowUploadButton = true;
+        protected bool _IsAllowMultiFiles = false;
         protected bool _IsUseVirtualPath = true;
         protected byte _UploadNmbers = 1;
         protected bool _IsTriggerUploadFilesFinishedEvent = false;
@@ -153,6 +154,24 @@ namespace APTemplate
             }
         }
 
+        /// <summary>
+        /// 每個上傳元件是否允許多檔上傳。
+        /// </summary>
+        [DefaultValue(""),
+         Category("自訂"),
+         Description("每個上傳元件是否允許多檔上傳。")]
+        public bool IsAllowMultiFiles
+        {
+            get
+            {
+                return _IsAllowMultiFiles;
+            }
+
+            set
+            {
+                _IsAllowMultiFiles = value;
+            }
+        }
 
         /// <summary>
         /// 是否使用虛擬目錄方式存放檔案(若為True,將以虛擬目錄結合UploadDir為最後存放目錄路徑,否則以UploadDir指定的目錄路徑)。
@@ -362,6 +381,7 @@ namespace APTemplate
                 UploadCtrl.IsWithProgressPercent = this.IsWithProgressPercent;
                 UploadCtrl.IsNeedConfirmMessage = this.IsNeedConfirmMessage;
                 UploadCtrl.IsShowUploadButton = this.IsShowUploadButton;
+                UploadCtrl.IsAllowMultiFiles = this.IsAllowMultiFiles;
                 UploadCtrl.IsUseVirtualPath = this.IsUseVirtualPath;
                 UploadCtrl.ProgressText = this.ProgressText;
                 UploadCtrl.NofileUploadMessage = this.NofileUploadMessage;
@@ -386,7 +406,6 @@ namespace APTemplate
                 LinkTriggerUploadedFilesEvent.Attributes["onclick"] = this.Page.ClientScript.GetPostBackEventReference(this, HidUploadedFiles.UniqueID) + ";return false;";
                 LinkTriggerUploadedFilesEvent.Attributes["style"] = "display:none;";
                 this.Controls.Add(LinkTriggerUploadedFilesEvent);
-
                 uploadBtn.OnClientClick = "upLoad(this,document.getElementById('" + HidUploadedFiles.ClientID + "'),document.getElementById('" + LinkTriggerUploadedFilesEvent.ClientID + "'));return false;";
             }
             else
@@ -419,7 +438,7 @@ namespace APTemplate
 
         public void RaisePostBackEvent(string eventArgument)
         {
-            DirectoryInfo UploadDir = this.UploadDir.StartsWith(@"\\") ? new DirectoryInfo(this.UploadDir) : new DirectoryInfo(this.Page.Server.MapPath(this.UploadDir));
+            DirectoryInfo UploadDir = this.UploadDir.StartsWith(@"\\") ? new DirectoryInfo(this.UploadDir) : new DirectoryInfo(this.Page.Server.MapPath(@"~\" + this.UploadDir));
             FileInfo[] UploadDirFiles = UploadDir.GetFiles();
             string[] StruploadedFiles = this.Page.Request[eventArgument].TrimEnd(";".ToCharArray()).Split(";".ToCharArray());
             List<FileInfo> uploadedFiles = new List<FileInfo>();

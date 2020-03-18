@@ -15,17 +15,27 @@
             var uploadFrame = window.frames[i];
             var progressBarFrame = window.frames[i].frames[0];
             uploadFrame.document.getElementById("btn_upload").click();
-            progressBarFrame.document.getElementById("isUploadFinished").value = "false";
-            if (hdnUploadedFiles != null)
-            {
-                var fileUpload = uploadFrame.document.getElementById("fileUpload");
-                var fileName = fileUpload.value.split(/[\\ ]+/).pop();
-                hdnUploadedFiles.value += fileName + ";";
+            if (progressBarFrame != null) {
+                progressBarFrame.document.getElementById("isUploadFinished").value = "false";
+                if (hdnUploadedFiles != null) {
+                    var fileUpload = uploadFrame.document.getElementById("fileUpload");
+                    var fileName = fileUpload.value.split(/[\\ ]+/).pop();
+                    hdnUploadedFiles.value += fileName + ";";
+                }
+                t = window.setInterval("checkUploadFinishedWithProgressBar()", 250);
             }
-            t = window.setInterval("checkUploadFinished()", 250);
+            else {
+                uploadFrame.document.getElementById("isUploadFinished").value = "false";
+                if (hdnUploadedFiles != null) {
+                    var fileUpload = uploadFrame.document.getElementById("fileUpload");
+                    var fileName = fileUpload.value.split(/[\\ ]+/).pop();
+                    hdnUploadedFiles.value += fileName + ";";
+                    t = window.setInterval("checkUploadFinished()", 250);
+                }
+            }
         }
 
-        function checkUploadFinished() {
+        function checkUploadFinishedWithProgressBar() {
             var progressBarFrame = window.frames[i].frames[0];
             if (progressBarFrame.document.getElementById("progress") != null) {
                 if (progressBarFrame.document.getElementById("isUploadFinished").value == "true") {
@@ -52,6 +62,34 @@
                             //btnTriggerUploadedFilesEvent.click();
                             linkTriggerUploadedFilesEvent.click();
                         }
+                    }
+                }
+            }
+        }
+        function checkUploadFinished() {
+            var uploadFrame = window.frames[i];
+            if (uploadFrame.document.getElementById("isUploadFinished").value == "true") {
+                if (i < maxi) {
+                    i++;
+                    uploadFrame = window.frames[i];
+                    uploadFrame.document.getElementById("btn_upload").click();
+                    uploadFrame.document.getElementById("isUploadFinished").value = "false";
+                    if (hdnUploadedFiles != null) {
+                        var fileUpload = uploadFrame.document.getElementById("fileUpload");
+                        var fileName = fileUpload.value.split(/[\\ ]+/).pop();
+                        hdnUploadedFiles.value += fileName + ";";
+                    }
+                }
+                else {
+                    clearInterval(t);
+                    uploadBtn.disabled = false;
+                    //window.alert("UploadedFiles:" + hdnUploadedFiles.value);
+                    if (hdnUploadedFiles == null) {
+                        window.location.href = window.location.href;
+                    }
+                    else {
+                        //btnTriggerUploadedFilesEvent.click();
+                        linkTriggerUploadedFilesEvent.click();
                     }
                 }
             }

@@ -73,6 +73,7 @@ namespace APTemplate
             string ScriptMethodNameForProgressPercent = (string)app.Context.Cache[UploadId + "_ScriptMethodNameForProgressPercent"];
             bool IsNeedConfirmMessage = (bool)app.Context.Cache[UploadId + "_IsNeedConfirmMessage"];
             bool IsShowUploadButton = (bool)app.Context.Cache[UploadId + "_IsShowUploadButton"];
+            bool IsAllowMultiFiles = (bool)app.Context.Cache[UploadId + "_IsAllowMultiFiles"];
             string UploadButtonStyle = IsShowUploadButton ? "" : "display:none;";
             string Guid = System.Guid.NewGuid().ToString();
 
@@ -92,7 +93,14 @@ namespace APTemplate
             sHtml.Append(" <table cellpadding=\"0\" cellspacing=\"0\">" + Environment.NewLine);
             sHtml.Append("<tr>" + Environment.NewLine);
             sHtml.Append("<td>" + Environment.NewLine);
-            sHtml.Append("<input type=\"file\" name=\"fileUpload\" id=\"fileUpload\" style=\"height:22px;\" />" + Environment.NewLine);
+            if (IsAllowMultiFiles)
+            {
+                sHtml.Append("<input type=\"file\" name=\"fileUpload\" id=\"fileUpload\" style=\"height:22px;\" multiple />" + Environment.NewLine);
+            }
+            else
+            {
+                sHtml.Append("<input type=\"file\" name=\"fileUpload\" id=\"fileUpload\" style=\"height:22px;\" />" + Environment.NewLine);
+            }
             sHtml.Append("</td>" + Environment.NewLine);
             sHtml.Append("<td>" + Environment.NewLine);
             if (IsWithProgressPercent)
@@ -118,18 +126,19 @@ namespace APTemplate
                 }
             }
             sHtml.Append("<input type=\"submit\" name=\"btn_serverUpload\" value=\"上傳\" id=\"btn_serverUpload\" style=\"display: none;\" />" + Environment.NewLine);
+            sHtml.Append("<input id=\"isUploadFinished\" name=\"isUploadFinished\" type=\"hidden\" value=\"true\" />" + Environment.NewLine);
             sHtml.Append("<input id=\"hdnGuid\" name=\"hdnGuid\" type=\"hidden\" value=\"" + Guid + "\" />" + Environment.NewLine);
             sHtml.Append("<span id=\"errorMsg\" style=\"font-family:" + ProgressTextFont.Name + ";font-size:" + ProgressTextFont.Size.ToString() + "pt;font-weight:" + FontWeight + ";font-style:" + FontStyle + ";text-decoration:" + TextDecoration + ";\"></span>");
             if (HasProgress)
             {
                 sHtml.Append("<div id=\"ProgressBar1_divProgressBar\" style=\"display:none;text-align:center;position:relative;border-color:#FFFF00;border-width:2px;border-style:Groove;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;background-color:#FFFF00;color:#000000;\">" + Environment.NewLine);
-                sHtml.Append("<img id=\"ImgProgressBar\" src=\"" + app.Context.Request.ApplicationPath + "/" + ProgressImageUrl + "\" style=\"border-width:0px;\" />" + Environment.NewLine);
+                sHtml.Append("<img id=\"ImgProgressBar\" src=\"" + app.Context.Request.ApplicationPath + ProgressImageUrl + "\" style=\"border-width:0px;\" />" + Environment.NewLine);
                 sHtml.Append("<span id=\"ProgressBar1_progressText\" style=\"font-family:" + ProgressTextFont.Name + ";font-size:" + ProgressTextFont.Size.ToString() + "pt;font-weight:" + FontWeight + ";font-style:" + FontStyle + ";text-decoration:" + TextDecoration + ";\">" + ProgressText + "</span>" + Environment.NewLine);
                 sHtml.Append("</div>" + Environment.NewLine);
             }
             if (IsWithProgressPercent)
             {
-                sHtml.Append("<iframe id=\"FrameProgress_" + UploadId + "\" name=\"FrameProgress_" + UploadId + "\" frameborder=\"0\" width=\"280\" height=\"20\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"text-align:center;vertical-align:text-top;\" src=\"" + app.Context.Request.ApplicationPath + "/" + ProgressPercentPageUrl + "?uploadIframeId=Frame_" + UploadId + "\"></iframe>" + Environment.NewLine);
+                sHtml.Append("<iframe id=\"FrameProgress_" + UploadId + "\" name=\"FrameProgress_" + UploadId + "\" frameborder=\"0\" width=\"280\" height=\"20\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"text-align:center;vertical-align:text-top;\" src=\"" + app.Context.Request.ApplicationPath + ProgressPercentPageUrl + "?uploadIframeId=Frame_" + UploadId + "\"></iframe>" + Environment.NewLine);
             }            
             sHtml.Append("</td>" + Environment.NewLine);
             sHtml.Append("</tr>" + Environment.NewLine);
@@ -254,6 +263,7 @@ namespace APTemplate
                 app.Context.Cache.Remove(UploadId + "_IsNeedConfirmMessage");
                 app.Context.Cache.Remove(UploadId + "_ConfirmMessage");
                 app.Context.Cache.Remove(UploadId + "_IsShowUploadButton");
+                app.Context.Cache.Remove(UploadId + "_IsAllowMultiFiles");
                 app.Context.Cache.Remove(sGuid + "_FileLength");
                 app.Context.Cache.Remove(sGuid + "_UploadFile");
                 app.Context.Cache.Remove(sGuid + "_CurrentFileLength");

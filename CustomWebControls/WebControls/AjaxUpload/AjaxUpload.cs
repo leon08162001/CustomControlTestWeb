@@ -27,10 +27,11 @@ namespace APTemplate
         protected List<FileFilterItem> _FileFilterItems = new List<FileFilterItem>();
         protected bool _IsWithProgressPercent = false;
         protected string _ProgressPercentPageUrl = "";
-        protected string _ScriptMethodNameForProgressPercent = "";
+        protected string _ScriptMethodNameForProgressPercent = "doProgressWork";
         protected bool _IsNeedConfirmMessage = false;
         protected string _ConfirmMessage = "";
         protected bool _IsShowUploadButton = true;
+        protected bool _IsAllowMultiFiles = false;
         protected bool _IsUseVirtualPath = true;
         protected string sGuid = Guid.NewGuid().ToString();
         protected List<FileFilterItem> _MultiUploadFileFilterItems;
@@ -158,6 +159,24 @@ namespace APTemplate
             }
         }
 
+        /// <summary>
+        /// 每個上傳元件是否允許多檔上傳。
+        /// </summary>
+        [DefaultValue(""),
+         Category("自訂"),
+         Description("每個上傳元件是否允許多檔上傳。")]
+        public bool IsAllowMultiFiles
+        {
+            get
+            {
+                return _IsAllowMultiFiles;
+            }
+
+            set
+            {
+                _IsAllowMultiFiles = value;
+            }
+        }
 
         /// <summary>
         /// 是否使用虛擬目錄方式存放檔案(若為True,將以虛擬目錄結合UploadDir為最後存放目錄路徑,否則以UploadDir指定的目錄路徑)。
@@ -323,6 +342,7 @@ namespace APTemplate
                 HttpContext.Current.Cache.Insert(this.ClientID + "_" + sGuid + "_IsNeedConfirmMessage", this.IsNeedConfirmMessage, null, DateTime.Now.AddMinutes(120), Cache.NoSlidingExpiration);
                 HttpContext.Current.Cache.Insert(this.ClientID + "_" + sGuid + "_ConfirmMessage", this.ConfirmMessage, null, DateTime.Now.AddMinutes(120), Cache.NoSlidingExpiration);
                 HttpContext.Current.Cache.Insert(this.ClientID + "_" + sGuid + "_IsShowUploadButton", this.IsShowUploadButton, null, DateTime.Now.AddMinutes(120), Cache.NoSlidingExpiration);
+                HttpContext.Current.Cache.Insert(this.ClientID + "_" + sGuid + "_IsAllowMultiFiles", this.IsAllowMultiFiles, null, DateTime.Now.AddMinutes(120), Cache.NoSlidingExpiration);
             }
             base.Render(writer);
         }
