@@ -57,6 +57,7 @@
                         <wcc:Button_ConfirmYesNo ID="Button_ConfirmYesNo2" runat="server" ButtonID="AA"
                             CancelConfirm="False" ClientScript="" CommandArgument="" CommandName="" PostBackUrl=""
                             Text="AAA" Width="" />
+                        <wcc:CalendarRange ID="CalendarRange1" runat="server" CalendarStyle="Modern" DateFormat="年月日" FirstDate="9999-01-01" HasBorder="True" IsShowButton="True" IsShowTitle="True" NeedValidation="True" NeedValue="True" ReadOnly="False" SecondDate="9999-01-01" TextAlign="left" TextBackColor="White" TextBoxHeight="" TextBoxID="" TextBoxID1="" TextBoxWidth="" TextForeColor="Black" TextLength="5000" Title="請輸入西元日期區間 : " TitleAlign="left" TitleBackColor="Aqua" TitleForeColor="Sienna" TitleWidth="" ValidationType="Label" />
                     </CustomControls>
                 </wcc:ToolBar>
                 <br />
