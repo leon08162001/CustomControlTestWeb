@@ -13,31 +13,27 @@
             UploadDir='<%$ AppSettings:UploadFolder %>' ProgressImageUrl="~/images/progressbar13.gif"
             Font-Names="微軟正黑體" Font-Size="9" ProgressTextFont="微軟正黑體, 9pt, style=Underline"
             ProgressText="上傳中..." ProgressPercentPageUrl="~/Demo/UploadProgress.aspx" 
-            ScriptMethodNameForProgressPercent="doProgressWork" IsUseVirtualPath="False">
+            ScriptMethodNameForProgressPercent="doProgressWork" IsUseVirtualPath="True">
             <FileFilterItems>
                 <wcc:FileFilterItem Value="*.*" />
             </FileFilterItems>
         </wcc:AjaxUpload>
-        <%--<iframe id="Frame_Progress1" frameborder="0" width="250" height="27" marginwidth="0"
-            marginheight="0" scrolling="no" src="UploadProgress.aspx?uploadIframeId=Frame_Upload1"></iframe>--%>
         <br />
-        <wcc:AjaxUpload ID="Upload2" runat="server" IsWithProgress="false" IsWithProgressPercent="true"
+        <%--<wcc:AjaxUpload ID="Upload2" runat="server" IsWithProgress="false" IsWithProgressPercent="true"
             UploadDir='<%$ AppSettings:UploadFolder %>' ProgressImageUrl="~/images/progressbar13.gif"
             Font-Names="微軟正黑體" Font-Size="9" ProgressTextFont="微軟正黑體, 9pt, style=Underline"
             ProgressText="上傳中..." ProgressPercentPageUrl="~/Demo/UploadProgress.aspx" 
-            ScriptMethodNameForProgressPercent="doProgressWork" IsUseVirtualPath="False">
+            ScriptMethodNameForProgressPercent="doProgressWork" IsUseVirtualPath="True">
             <FileFilterItems>
                 <wcc:FileFilterItem Value="*.*" />
             </FileFilterItems>
         </wcc:AjaxUpload>
-        <%-- <iframe id="Frame_Progress2" frameborder="0" width="250" height="27" marginwidth="0"
-            marginheight="0" scrolling="no" src="UploadProgress.aspx?uploadIframeId=Frame_Upload2"></iframe>--%>
         <br />
         <wcc:AjaxUpload ID="Upload3" runat="server" IsWithProgress="false" IsWithProgressPercent="true"
             UploadDir='<%$ AppSettings:UploadFolder %>' ProgressImageUrl="~/images/progressbar13.gif"
             Font-Names="微軟正黑體" Font-Size="9" ProgressTextFont="微軟正黑體, 9pt, style=Underline"
             ProgressText="上傳中..." ProgressPercentPageUrl="~/Demo/UploadProgress.aspx" 
-            ScriptMethodNameForProgressPercent="doProgressWork" IsUseVirtualPath="False">
+            ScriptMethodNameForProgressPercent="doProgressWork" IsUseVirtualPath="True">
             <FileFilterItems>
                 <wcc:FileFilterItem Value="*.*" />
             </FileFilterItems>
@@ -47,7 +43,7 @@
             UploadDir='<%$ AppSettings:UploadFolder %>' ProgressImageUrl="~/images/progressbar13.gif"
             Font-Names="微軟正黑體" Font-Size="9" ProgressTextFont="微軟正黑體, 9pt, style=Underline"
             ProgressText="上傳中..." ProgressPercentPageUrl="~/Demo/UploadProgress.aspx" 
-            ScriptMethodNameForProgressPercent="doProgressWork" IsUseVirtualPath="False">
+            ScriptMethodNameForProgressPercent="doProgressWork" IsUseVirtualPath="True">
             <FileFilterItems>
                 <wcc:FileFilterItem Value="*.*" />
             </FileFilterItems>
@@ -57,7 +53,7 @@
             UploadDir='<%$ AppSettings:UploadFolder %>' ProgressImageUrl="~/images/progressbar13.gif"
             Font-Names="微軟正黑體" Font-Size="9" ProgressTextFont="微軟正黑體, 9pt, style=Underline"
             ProgressText="上傳中..." ProgressPercentPageUrl="~/Demo/UploadProgress.aspx" 
-            ScriptMethodNameForProgressPercent="doProgressWork" IsUseVirtualPath="False">
+            ScriptMethodNameForProgressPercent="doProgressWork" IsUseVirtualPath="True">
             <FileFilterItems>
                 <wcc:FileFilterItem Value="*.*" />
             </FileFilterItems>
@@ -67,12 +63,12 @@
             UploadDir='<%$ AppSettings:UploadFolder %>' ProgressImageUrl="~/images/progressbar13.gif"
             Font-Names="微軟正黑體" Font-Size="9" ProgressTextFont="微軟正黑體, 9pt, style=Underline"
             ProgressText="上傳中..." ProgressPercentPageUrl="~/Demo/UploadProgress.aspx" 
-            ScriptMethodNameForProgressPercent="doProgressWork" IsUseVirtualPath="False">
+            ScriptMethodNameForProgressPercent="doProgressWork" IsUseVirtualPath="True">
             <FileFilterItems>
                 <wcc:FileFilterItem Value="*.*" />
             </FileFilterItems>
         </wcc:AjaxUpload>
-        <br />
+        <br />--%>
     </div>
     </form>
 </body>

@@ -9,6 +9,7 @@ public partial class UploadDemo : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        AjaxPro.Utility.RegisterTypeForAjax(typeof(APTemplate.AjaxUploadHandler));
         //this.Upload2.UploadDir = this.Upload2.UploadDir + @"\20120906";
         //this.Upload3.UploadDir = this.Upload3.UploadDir + @"\20120906";
     }
