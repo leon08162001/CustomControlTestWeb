@@ -13,16 +13,16 @@
             linkTriggerUploadedFilesEvent = TriggerUploadedFilesEventObj;
             maxi = window.frames.length - 1;
             var uploadFrame = window.frames[i];
-            var progressBarFrame = window.frames[i].frames[0];
+            var progressPercentFrame = window.frames[i].frames[0];
             uploadFrame.document.getElementById("btn_upload").click();
-            if (progressBarFrame != null) {
-                progressBarFrame.document.getElementById("isUploadFinished").value = "false";
+            if (progressPercentFrame != null) {
+                progressPercentFrame.document.getElementById("isUploadFinished").value = "false";
                 if (hdnUploadedFiles != null) {
                     var fileUpload = uploadFrame.document.getElementById("fileUpload");
                     var fileName = fileUpload.value.split(/[\\ ]+/).pop();
                     hdnUploadedFiles.value += fileName + ";";
                 }
-                t = window.setInterval("checkUploadFinishedWithProgressBar()", 250);
+                t = window.setInterval("checkUploadFinishedWithProgressPercent()", 250);
             }
             else {
                 uploadFrame.document.getElementById("isUploadFinished").value = "false";
@@ -30,21 +30,21 @@
                     var fileUpload = uploadFrame.document.getElementById("fileUpload");
                     var fileName = fileUpload.value.split(/[\\ ]+/).pop();
                     hdnUploadedFiles.value += fileName + ";";
-                    t = window.setInterval("checkUploadFinished()", 250);
+                    t = window.setInterval("checkUploadFinishedWithProgressBar()", 250);
                 }
             }
         }
 
-        function checkUploadFinishedWithProgressBar() {
-            var progressBarFrame = window.frames[i].frames[0];
-            if (progressBarFrame.document.getElementById("progress") != null) {
-                if (progressBarFrame.document.getElementById("isUploadFinished").value == "true") {
+        function checkUploadFinishedWithProgressPercent() {
+            var progressPercentFrame = window.frames[i].frames[0];
+            if (progressPercentFrame.document.getElementById("progress") != null) {
+                if (progressPercentFrame.document.getElementById("isUploadFinished").value == "true") {
                     if (i < maxi) {
                         i++;
                         var uploadFrame = window.frames[i];
-                        progressBarFrame = window.frames[i].frames[0];
+                        progressPercentFrame = window.frames[i].frames[0];
                         uploadFrame.document.getElementById("btn_upload").click();
-                        progressBarFrame.document.getElementById("isUploadFinished").value = "false";
+                        progressPercentFrame.document.getElementById("isUploadFinished").value = "false";
                         if (hdnUploadedFiles != null) {
                             var fileUpload = uploadFrame.document.getElementById("fileUpload");
                             var fileName = fileUpload.value.split(/[\\ ]+/).pop();
@@ -66,7 +66,7 @@
                 }
             }
         }
-        function checkUploadFinished() {
+        function checkUploadFinishedWithProgressBar() {
             var uploadFrame = window.frames[i];
             if (uploadFrame.document.getElementById("isUploadFinished").value == "true") {
                 if (i < maxi) {

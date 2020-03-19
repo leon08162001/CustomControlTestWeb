@@ -248,25 +248,28 @@ namespace APTemplate
             }
             finally
             {
-                app.Context.Cache.Remove(UploadId + "_UploadDir");
-                app.Context.Cache.Remove(UploadId + "_IsUseVirtualPath");
-                app.Context.Cache.Remove(UploadId + "_IsWithProgress");
-                app.Context.Cache.Remove(UploadId + "_IsWithProgressPercent");
-                app.Context.Cache.Remove(UploadId + "_ProgressText");
-                app.Context.Cache.Remove(UploadId + "_NofileUploadMessage");
-                app.Context.Cache.Remove(UploadId + "_ProgressTextFont");
-                app.Context.Cache.Remove(UploadId + "_ProgressWidth");
-                app.Context.Cache.Remove(UploadId + "_ProgressImageUrl");
-                app.Context.Cache.Remove(UploadId + "_FileFilterItems");
-                app.Context.Cache.Remove(UploadId + "_ProgressPercentPageUrl");
-                app.Context.Cache.Remove(UploadId + "_ScriptMethodNameForProgressPercent");
-                app.Context.Cache.Remove(UploadId + "_IsNeedConfirmMessage");
-                app.Context.Cache.Remove(UploadId + "_ConfirmMessage");
-                app.Context.Cache.Remove(UploadId + "_IsShowUploadButton");
-                app.Context.Cache.Remove(UploadId + "_IsAllowMultiFiles");
-                app.Context.Cache.Remove(sGuid + "_FileLength");
-                app.Context.Cache.Remove(sGuid + "_UploadFile");
-                app.Context.Cache.Remove(sGuid + "_CurrentFileLength");
+                if (!((bool)app.Context.Cache[UploadId + "_IsShowUploadButton"]))
+                {
+                    app.Context.Cache.Remove(UploadId + "_UploadDir");
+                    app.Context.Cache.Remove(UploadId + "_IsUseVirtualPath");
+                    app.Context.Cache.Remove(UploadId + "_IsWithProgress");
+                    app.Context.Cache.Remove(UploadId + "_IsWithProgressPercent");
+                    app.Context.Cache.Remove(UploadId + "_ProgressText");
+                    app.Context.Cache.Remove(UploadId + "_NofileUploadMessage");
+                    app.Context.Cache.Remove(UploadId + "_ProgressTextFont");
+                    app.Context.Cache.Remove(UploadId + "_ProgressWidth");
+                    app.Context.Cache.Remove(UploadId + "_ProgressImageUrl");
+                    app.Context.Cache.Remove(UploadId + "_FileFilterItems");
+                    app.Context.Cache.Remove(UploadId + "_ProgressPercentPageUrl");
+                    app.Context.Cache.Remove(UploadId + "_ScriptMethodNameForProgressPercent");
+                    app.Context.Cache.Remove(UploadId + "_IsNeedConfirmMessage");
+                    app.Context.Cache.Remove(UploadId + "_ConfirmMessage");
+                    app.Context.Cache.Remove(UploadId + "_IsShowUploadButton");
+                    app.Context.Cache.Remove(UploadId + "_IsAllowMultiFiles");
+                    app.Context.Cache.Remove(sGuid + "_FileLength");
+                    app.Context.Cache.Remove(sGuid + "_UploadFile");
+                    app.Context.Cache.Remove(sGuid + "_CurrentFileLength");
+                }
             }
         }
 
