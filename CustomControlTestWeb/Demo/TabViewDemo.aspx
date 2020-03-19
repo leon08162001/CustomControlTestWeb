@@ -26,7 +26,7 @@
                         <wcc:TabPage runat="server" Text="Tab Item1" PaddingTop="10px" PaddingBottom="10px"
                             PaddingLeft="10px" PaddingRight="10px" ID="TabPage1" Style="padding-top: 10px;
                             padding-bottom: 10px; padding-left: 10px; padding-right: 10px;" 
-                            ToolTip="A" BorderColor="white" BorderStyle="None">
+                            ToolTip="A" BorderColor="Red" BorderStyle="Solid" BorderWidth="1px">
                             <asp:UpdatePanel ID="UpdatePanel5" runat="server" UpdateMode="Conditional">
                                 <ContentTemplate>
                                     <wcc:Captcha ID="Captcha1" runat="server" CaptchaLength="6" CaptchaBackgroundNoise="Extreme"
@@ -53,7 +53,7 @@
                         <wcc:TabPage ID="TabPage2" runat="server" PaddingBottom="10px" PaddingLeft="10px"
                             PaddingRight="10px" PaddingTop="10px" Style="padding-top: 10px; padding-bottom: 10px;
                             padding-left: 10px; padding-right: 10px;" Text="Tab Item2" ToolTip="B"
-                             BorderColor="white" BorderStyle="None">
+                             BorderColor="Red" BorderStyle="Solid" BorderWidth="1px">
                             <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional" EnableViewState="true">
                                 <ContentTemplate>
                                     <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
