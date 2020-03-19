@@ -19,18 +19,24 @@
                 progressPercentFrame.document.getElementById("isUploadFinished").value = "false";
                 if (hdnUploadedFiles != null) {
                     var fileUpload = uploadFrame.document.getElementById("fileUpload");
-                    var fileName = fileUpload.value.split(/[\\ ]+/).pop();
-                    hdnUploadedFiles.value += fileName + ";";
-                }
-                t = window.setInterval("checkUploadFinishedWithProgressPercent()", 250);
+                    var filesArry = fileUpload.value.split(/[,]+/);
+                    filesArry.forEach(function (file) {
+                        var fileName = file.split(/[\\ ]+/).pop();
+                        hdnUploadedFiles.value += fileName + ";";
+                    });
+              }
+                t = window.setInterval("checkUploadFinishedWithProgressPercent()", 1);
             }
             else {
                 uploadFrame.document.getElementById("isUploadFinished").value = "false";
                 if (hdnUploadedFiles != null) {
                     var fileUpload = uploadFrame.document.getElementById("fileUpload");
-                    var fileName = fileUpload.value.split(/[\\ ]+/).pop();
-                    hdnUploadedFiles.value += fileName + ";";
-                    t = window.setInterval("checkUploadFinishedWithProgressBar()", 250);
+                    var filesArry = fileUpload.value.split(/[,]+/);
+                    filesArry.forEach(function (file) {
+                        var fileName = file.split(/[\\ ]+/).pop();
+                        hdnUploadedFiles.value += fileName + ";";
+                    });
+                    t = window.setInterval("checkUploadFinishedWithProgressBar()", 1);
                 }
             }
         }
@@ -47,8 +53,13 @@
                         progressPercentFrame.document.getElementById("isUploadFinished").value = "false";
                         if (hdnUploadedFiles != null) {
                             var fileUpload = uploadFrame.document.getElementById("fileUpload");
-                            var fileName = fileUpload.value.split(/[\\ ]+/).pop();
-                            hdnUploadedFiles.value += fileName + ";";
+                            var filesArry = fileUpload.value.split(/[,]+/);
+                            filesArry.forEach(function (file) {
+                                var fileName = file.split(/[\\ ]+/).pop();
+                                hdnUploadedFiles.value += fileName + ";";
+                            });
+                            //var fileName = fileUpload.value.split(/[\\ ]+/).pop();
+                            //hdnUploadedFiles.value += fileName + ";";
                         }
                     }
                     else {
@@ -76,8 +87,13 @@
                     uploadFrame.document.getElementById("isUploadFinished").value = "false";
                     if (hdnUploadedFiles != null) {
                         var fileUpload = uploadFrame.document.getElementById("fileUpload");
-                        var fileName = fileUpload.value.split(/[\\ ]+/).pop();
-                        hdnUploadedFiles.value += fileName + ";";
+                        var filesArry = fileUpload.value.split(/[,]+/);
+                        filesArry.forEach(function (file) {
+                            var fileName = file.split(/[\\ ]+/).pop();
+                            hdnUploadedFiles.value += fileName + ";";
+                        });
+                        //var fileName = fileUpload.value.split(/[\\ ]+/).pop();
+                        //hdnUploadedFiles.value += fileName + ";";
                     }
                 }
                 else {

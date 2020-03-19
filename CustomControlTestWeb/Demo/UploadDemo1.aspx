@@ -19,11 +19,11 @@
             uploadFrame.document.getElementById("btn_upload").click();
             if (progressPercentFrame != null) {
                 progressPercentFrame.document.getElementById("isUploadFinished").value = "false";
-                t = window.setInterval("checkUploadFinishedForProgressPercent()", 250);
+                t = window.setInterval("checkUploadFinishedForProgressPercent()", 1);
             }
             else {
                 uploadFrame.document.getElementById("isUploadFinished").value = "false";
-                t = window.setInterval("checkUploadFinishedForProgressBar()", 250);
+                t = window.setInterval("checkUploadFinishedForProgressBar()", 1);
             }
         }
 
