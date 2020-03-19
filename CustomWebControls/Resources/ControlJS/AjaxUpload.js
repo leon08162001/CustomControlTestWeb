@@ -21,7 +21,7 @@
                     var fileUpload = uploadFrame.document.getElementById("fileUpload");
                     var filesArry = fileUpload.value.split(/[,]+/);
                     filesArry.forEach(function (file) {
-                        var fileName = file.split(/[\\ ]+/).pop();
+                        var fileName = file.split(/[\\]+/).pop();
                         hdnUploadedFiles.value += fileName + ";";
                     });
               }
@@ -33,7 +33,7 @@
                     var fileUpload = uploadFrame.document.getElementById("fileUpload");
                     var filesArry = fileUpload.value.split(/[,]+/);
                     filesArry.forEach(function (file) {
-                        var fileName = file.split(/[\\ ]+/).pop();
+                        var fileName = file.split(/[\\]+/).pop();
                         hdnUploadedFiles.value += fileName + ";";
                     });
                     t = window.setInterval("checkUploadFinishedWithProgressBar()", 1);
@@ -55,7 +55,7 @@
                             var fileUpload = uploadFrame.document.getElementById("fileUpload");
                             var filesArry = fileUpload.value.split(/[,]+/);
                             filesArry.forEach(function (file) {
-                                var fileName = file.split(/[\\ ]+/).pop();
+                                var fileName = file.split(/[\\]+/).pop();
                                 hdnUploadedFiles.value += fileName + ";";
                             });
                             //var fileName = fileUpload.value.split(/[\\ ]+/).pop();
