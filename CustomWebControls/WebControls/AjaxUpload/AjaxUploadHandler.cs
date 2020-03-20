@@ -129,6 +129,7 @@ namespace APTemplate
             sHtml.Append("<input id=\"isUploadFinished\" name=\"isUploadFinished\" type=\"hidden\" value=\"true\" />" + Environment.NewLine);
             sHtml.Append("<input id=\"hdnGuid\" name=\"hdnGuid\" type=\"hidden\" value=\"" + Guid + "\" />" + Environment.NewLine);
             sHtml.Append("<span id=\"errorMsg\" style=\"font-family:" + ProgressTextFont.Name + ";font-size:" + ProgressTextFont.Size.ToString() + "pt;font-weight:" + FontWeight + ";font-style:" + FontStyle + ";text-decoration:" + TextDecoration + ";\"></span>");
+            sHtml.Append("<div style=\"display: inline;\">" + Environment.NewLine);
             if (HasProgress)
             {
                 sHtml.Append("<div id=\"ProgressBar1_divProgressBar\" style=\"display:none;text-align:center;position:relative;border-color:#FFFF00;border-width:2px;border-style:Groove;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;background-color:#FFFF00;color:#000000;\">" + Environment.NewLine);
@@ -139,7 +140,8 @@ namespace APTemplate
             if (IsWithProgressPercent)
             {
                 sHtml.Append("<iframe id=\"FrameProgress_" + UploadId + "\" name=\"FrameProgress_" + UploadId + "\" frameborder=\"0\" width=\"280\" height=\"20\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"text-align:center;vertical-align:text-top;\" src=\"" + app.Context.Request.ApplicationPath + ProgressPercentPageUrl + "?uploadIframeId=Frame_" + UploadId + "\"></iframe>" + Environment.NewLine);
-            }            
+            }
+            sHtml.Append("</div>" + Environment.NewLine);
             sHtml.Append("</td>" + Environment.NewLine);
             sHtml.Append("</tr>" + Environment.NewLine);
             sHtml.Append("</table>" + Environment.NewLine);
