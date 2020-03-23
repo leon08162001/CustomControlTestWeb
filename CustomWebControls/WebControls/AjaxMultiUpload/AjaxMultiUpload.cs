@@ -37,6 +37,8 @@ namespace APTemplate
         protected bool _IsUseVirtualPath = true;
         protected byte _UploadNmbers = 1;
         protected bool _IsTriggerUploadFilesFinishedEvent = false;
+        protected bool _IsCausesValidation = false;
+        protected string _ValidationGroup = "";
 
         // Delegate  
         public delegate void MultiUploadFilesFinishedEventHandler(object sender, MultiUploadFilesFinishedEventArgs e);
@@ -329,6 +331,42 @@ namespace APTemplate
                 _IsTriggerUploadFilesFinishedEvent = value;
             }
         }
+        /// <summary>
+        /// 按鈕是否導致引發驗證。
+        /// </summary>
+        [DefaultValue(""),
+         Category("自訂"),
+         Description("按鈕是否導致引發驗證。")]
+        public bool CausesValidation
+        {
+            get
+            {
+                return _IsCausesValidation;
+            }
+
+            set
+            {
+                _IsCausesValidation = value;
+            }
+        }
+        /// <summary>
+        /// 驗證群組名稱。
+        /// </summary>
+        [DefaultValue(""),
+         Category("自訂"),
+         Description("驗證群組名稱。")]
+        public virtual String ValidationGroup
+        {
+            get
+            {
+                return _ValidationGroup;
+            }
+
+            set
+            {
+                _ValidationGroup = value;
+            }
+        }
 
         /// <summary>
         /// 多檔上傳全部完成時事件
@@ -379,13 +417,13 @@ namespace APTemplate
                 UploadCtrl.UploadDir = this.UploadDir;
                 UploadCtrl.IsWithProgress = this.IsWithProgress;
                 UploadCtrl.IsWithProgressPercent = this.IsWithProgressPercent;
-                UploadCtrl.IsNeedConfirmMessage = this.IsNeedConfirmMessage;
+                //UploadCtrl.IsNeedConfirmMessage = this.IsNeedConfirmMessage;
                 UploadCtrl.IsShowUploadButton = this.IsShowUploadButton;
                 UploadCtrl.IsAllowMultiFiles = this.IsAllowMultiFiles;
                 UploadCtrl.IsUseVirtualPath = this.IsUseVirtualPath;
                 UploadCtrl.ProgressText = this.ProgressText;
                 UploadCtrl.NofileUploadMessage = this.NofileUploadMessage;
-                UploadCtrl.ConfirmMessage = this.ConfirmMessage;
+                //UploadCtrl.ConfirmMessage = this.ConfirmMessage;
                 UploadCtrl.ProgressWidth = this.ProgressWidth;
                 UploadCtrl.ProgressPercentPageUrl = this.ProgressPercentPageUrl;
                 UploadCtrl.ProgressImageUrl = this.ProgressImageUrl;
@@ -397,6 +435,12 @@ namespace APTemplate
             Button uploadBtn = new Button();
             uploadBtn.ID = "Button1";
             uploadBtn.Text = "上傳";
+            uploadBtn.CausesValidation = this.CausesValidation;
+            uploadBtn.ValidationGroup = this.ValidationGroup;
+            if (this.CausesValidation)
+            {
+                uploadBtn.OnClientClick = "if(!Page_ClientValidate('" + uploadBtn.ValidationGroup + "')){ return false;}";
+            }
             if (_IsTriggerUploadFilesFinishedEvent)
             {
                 HtmlInputHidden HidUploadedFiles = new HtmlInputHidden();
@@ -406,11 +450,28 @@ namespace APTemplate
                 LinkTriggerUploadedFilesEvent.Attributes["onclick"] = this.Page.ClientScript.GetPostBackEventReference(this, HidUploadedFiles.UniqueID) + ";return false;";
                 LinkTriggerUploadedFilesEvent.Attributes["style"] = "display:none;";
                 this.Controls.Add(LinkTriggerUploadedFilesEvent);
-                uploadBtn.OnClientClick = "upLoad(this,document.getElementById('" + HidUploadedFiles.ClientID + "'),document.getElementById('" + LinkTriggerUploadedFilesEvent.ClientID + "'));return false;";
+                if (this.IsNeedConfirmMessage)
+                {
+                    CreateConfirmScript();
+                    uploadBtn.OnClientClick += "if(doConfirm_" + this.ClientID + "()){upLoad(this,document.getElementById('" + HidUploadedFiles.ClientID + "'),document.getElementById('" + LinkTriggerUploadedFilesEvent.ClientID + "'));}return false;";
+                }
+                else
+                {
+                    uploadBtn.OnClientClick += "upLoad(this,document.getElementById('" + HidUploadedFiles.ClientID + "'),document.getElementById('" + LinkTriggerUploadedFilesEvent.ClientID + "'));return false;";
+                }
+                //uploadBtn.OnClientClick = "upLoad(this,document.getElementById('" + HidUploadedFiles.ClientID + "'),document.getElementById('" + LinkTriggerUploadedFilesEvent.ClientID + "'));return false;";
             }
             else
             {
-                uploadBtn.OnClientClick = "upLoad(this);return false;";
+                if (this.IsNeedConfirmMessage)
+                {
+                    CreateConfirmScript();
+                    uploadBtn.OnClientClick += "if(doConfirm_" + this.ClientID + "()){upLoad(this);}return false;";
+                }
+                else
+                {
+                    uploadBtn.OnClientClick += "upLoad(this);return false;";
+                }
             }
             this.Controls.Add(uploadBtn);
         }
@@ -455,7 +516,19 @@ namespace APTemplate
             }
             OnMultiUploadFilesFinished(this, new MultiUploadFilesFinishedEventArgs(uploadedFiles));
         }
-
+        private void CreateConfirmScript()
+        {
+            if (!Page.IsStartupScriptRegistered("doConfirm_" + this.ClientID))
+            {
+                string script = "<script language=javascript> \n" +
+                  "\t function doConfirm_" + this.ClientID + "() { \n" +
+                  "\t return window.confirm(\"" + ConfirmMessage + "\"); \n" +
+                  "} \n" +
+                  "</script>";
+                string ClientScript = script;
+                Page.RegisterStartupScript("doConfirm_" + this.ClientID, ClientScript);
+            }
+        }
         #endregion
     }
 }
