@@ -518,7 +518,7 @@ namespace APTemplate
         }
         private void CreateConfirmScript()
         {
-            if (!Page.IsStartupScriptRegistered("doConfirm_" + this.ClientID))
+            if (!Page.ClientScript.IsStartupScriptRegistered("doConfirm_" + this.ClientID))
             {
                 string script = "<script language=javascript> \n" +
                   "\t function doConfirm_" + this.ClientID + "() { \n" +

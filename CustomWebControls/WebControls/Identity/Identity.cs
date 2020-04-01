@@ -183,7 +183,7 @@ namespace APTemplate
                   "} \n" +
                   "</script>";
                 string ClientScript = script;
-                Page.RegisterStartupScript(TextBox1.ClientID + "_ValidScript", ClientScript);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), TextBox1.ClientID + "_ValidScript", ClientScript);
             }
             base.OnPreRender(e);
         }

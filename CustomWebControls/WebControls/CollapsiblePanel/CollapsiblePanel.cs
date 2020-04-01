@@ -415,16 +415,16 @@ namespace APTemplate
         protected override void OnPreRender(EventArgs e)
         {
             //Output the javascript if it is needed
-            if (!Page.IsClientScriptBlockRegistered("ExpandCollapse") && (this.Enabled))
+            if (!Page.ClientScript.IsClientScriptBlockRegistered("ExpandCollapse") && (this.Enabled))
             {
-                Page.RegisterClientScriptBlock("ExpandCollapse", C_COLLAPSIBLE_SCRIPT);
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "ExpandCollapse", C_COLLAPSIBLE_SCRIPT);
             }
 
-            if (!Page.IsStartupScriptRegistered("addLoadEvent") && (this.Draggable))
-                Page.RegisterStartupScript("addLoadEvent", addLoadEvent);
+            if (!Page.ClientScript.IsStartupScriptRegistered("addLoadEvent") && (this.Draggable))
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "addLoadEvent", addLoadEvent);
 
-            if (!Page.IsStartupScriptRegistered("dragInit" + "_" + this.ClientID) && (this.Draggable))
-                Page.RegisterStartupScript("dragInit" + "_" + this.ClientID, String.Format(C_DRAGGABLE_REGISTRATION, this.ClientID + "_container"));
+            if (!Page.ClientScript.IsStartupScriptRegistered("dragInit" + "_" + this.ClientID) && (this.Draggable))
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "dragInit" + "_" + this.ClientID, String.Format(C_DRAGGABLE_REGISTRATION, this.ClientID + "_container"));
 
             if (this.Enabled)
                 RegisterJavaScript.RegisterCollapsiblePanelScript(Page);
