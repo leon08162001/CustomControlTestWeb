@@ -373,6 +373,7 @@ namespace APTemplate
             PageSize = (int)Convert.ToInt32(DropDownListRecord.SelectedValue);
             PageCount = PageCount == 0 ? GetPageCount() : PageCount;
             PageIndex = 0;
+            CancelEditMode();
             Paging();
             if (PM != null)
             {
@@ -390,6 +391,7 @@ namespace APTemplate
             PageSize = (int)Convert.ToInt32(DropDownListRecord.SelectedValue);
             PageCount = PageCount == 0 ? GetPageCount() : PageCount;
             PageIndex -= 1;
+            CancelEditMode();
             Paging();
             if (PM != null)
             {
@@ -407,6 +409,7 @@ namespace APTemplate
             PageSize = (int)Convert.ToInt32(DropDownListRecord.SelectedValue);
             PageCount = PageCount == 0 ? GetPageCount() : PageCount;
             PageIndex += 1;
+            CancelEditMode();
             Paging();
             if (PM != null)
             {
@@ -424,6 +427,7 @@ namespace APTemplate
             PageSize = (int)Convert.ToInt32(DropDownListRecord.SelectedValue);
             PageCount = PageCount == 0 ? GetPageCount() : PageCount;
             PageIndex = PageCount > 0 ? PageCount - 1 : 0;
+            CancelEditMode();
             Paging();
             if (PM != null)
             {
@@ -442,6 +446,7 @@ namespace APTemplate
             PageSize = (int)Convert.ToInt32(DropDownListRecord.SelectedValue);
             PageCount = PageCount == 0 ? GetPageCount() : PageCount;
             PageIndex = PageTo.Text != "" && Int32.TryParse(PageTo.Text, out result) && result > 0 && result <= PageCount ? Int32.Parse(PageTo.Text) - 1 : PageIndex;
+            CancelEditMode();
             Paging();
             if (PM != null)
             {
@@ -461,6 +466,7 @@ namespace APTemplate
             PageCount = PageCount == 0 ? GetPageCount() : PageCount;
             PageTo.Text = "1";
             PageIndex = 0;
+            CancelEditMode();
             Paging();
             if (PM != null)
             {
@@ -831,7 +837,14 @@ namespace APTemplate
             }
             return tb;
         }
-
+        private void CancelEditMode()
+        {
+            int EditIndex = (int)_PagedControl.GetType().GetProperty("EditIndex").GetValue(_PagedControl, null);
+            if (EditIndex != -1)
+            {
+                _PagedControl.GetType().GetProperty("EditIndex").SetValue(_PagedControl, -1, null);
+            }
+        }
         /// <summary>  
         /// Determine of specified type is nullable  
         /// </summary>  
